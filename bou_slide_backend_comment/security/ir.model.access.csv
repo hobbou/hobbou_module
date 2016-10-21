@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bou_comment_public,bou.user.comment.public,model_bou_comment,base.group_public,1,0,0,0
+access_bou_comment_portal,bou.user.comment.portal,model_bou_comment,base.group_portal,1,0,0,0
+access_bou_comment_user,bou.user.comment.user,model_bou_comment,base.group_user,1,1,1,1

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- SLIDE.CHANNEL VIEWS -->
+        <record model="ir.ui.view" id="view_slide_channel_form_bouslidebackendtimeline">
+            <field name="name">slide.channel.form.bouslidebackendtimeline</field>
+            <field name="model">slide.channel</field>
+            <field name="inherit_id" ref="website_slides.view_slide_channel_form" />
+            <field name="arch" type="xml">                
+                <button name="open_website_url" position="after">
+                    <button class="oe_inline oe_stat_button" name="action_open_channel_timeline"
+                        type="object" icon="fa-globe" string="Timeline">
+                    </button>
+                </button>
+                <page string="General" position="after">
+                    <page string="Timeline">
+                        <field name="bou_post_ids" />
+                    </page>
+                    <page string="Album">
+                        <field name="bou_playlist_ids">
+                            <field name="sequence" />
+                            <field name="name" />
+                            <field name="type" />
+                            <field name="user_id" />                            
+                        </field>
+                    </page>
+                    <page string="Subscriber">
+                        <field name="bou_channel_subscriber_line_ids">
+                            <tree string="Subscriber">
+                                <field name="user_id" />
+                                <field name="sequence" />
+                                <field name="create_date" />
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+        
+        <!-- BOU.CHANNEL.POST VIEWS -->
+        <record model="ir.ui.view" id="view_bou_channel_post_tree_bouslidebackendtimeline">
+            <field name="name">view.bou.channel.post.tree.bouslidebackendtimeline</field>
+            <field name="model">bou.channel.post</field>
+            <field name="arch" type="xml">
+                <tree string="Channel Post">
+                    <field name="channel_id" />
+                    <field name="content_id" />
+                    <field name="post_type" />
+                    <field name="create_date" />
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_bou_channel_post_form_bouslidebackendtimeline">
+            <field name="name">view.bou.channel.post.form.bouslidebackendtimeline</field>
+            <field name="model">bou.channel.post</field>
+            <field name="arch" type="xml">
+                <form string="Channel Post">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="channel_id" />
+                                <field name="content_id" />
+                            </group>
+                            <group>
+                                <field name="post_type" />
+                                <field name="active" />                                
+                            </group>                            
+                        </group>
+                        <label for="description"/>
+                        <field name="description" colspan="4" nolabel="1"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+       
+        <record model="ir.ui.view" id="view_bou_channel_post_search_bouslidebackendtimeline">
+            <field name="name">view.bou.channel.post.search.bouslidebackendtimeline</field>
+            <field name="model">bou.channel.post</field>
+            <field name="arch" type="xml">
+                <search string="Search Post">
+                    <field name="channel_id"/>
+                    <field name="content_id"/>
+                    <field name="post_type"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Channel" domain="[]" context="{'group_by': 'channel_id'}"/>
+                        <filter string="Post Type" domain="[]" context="{'group_by': 'post_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- BOU.PLAYLIST VIEWS -->
+        <record model="ir.ui.view" id="view_bou_playlist_tree_bouslidebackendtimeline">
+            <field name="name">view.bou.playlist.tree.bouslidebackendtimeline</field>
+            <field name="model">bou.playlist</field>
+            <field name="arch" type="xml">
+                <tree string="Playlist">
+                    <field name="name" />
+                    <field name="user_id" />
+                    <field name="channel_id" />
+                    <field name="type" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_bou_playlist_form_bouslidebackendtimeline">
+            <field name="name">view.bou.playlist.form.bouslidebackendtimeline</field>
+            <field name="model">bou.playlist</field>
+            <field name="arch" type="xml">
+                <form string="Channel Post">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="type" />
+                            </group>
+                            <group>
+                                <field name="user_id" />
+                                <field name="channel_id" />                                
+                            </group>                            
+                        </group>
+                        <label for="description"/>
+                        <field name="description" colspan="4" nolabel="1"/>
+                        <notebook>
+                            <page string="Playlist Line">
+                                <field name="bou_playlist_line_ids">
+                                    <tree string="Playlist Line">
+                                        <field name="sequence" />
+                                        <field name="content_id" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Followers">
+                                <field name="follower_line_ids">
+                                    <tree string="Playlist Line">
+                                        <field name="sequence" />
+                                        <field name="user_id" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_bou_playlist_search_bouslidebackendtimeline">
+            <field name="name">view.bou.playlist.search.bouslidebackendtimeline</field>
+            <field name="model">bou.playlist</field>
+            <field name="arch" type="xml">
+                <search string="Search Playlist">
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="user_id"/>
+                    <field name="channel_id"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Channel" domain="[]" context="{'group_by': 'channel_id'}"/>
+                        <filter string="Type" domain="[]" context="{'group_by': 'type'}"/>
+                        <filter string="User" domain="[]" context="{'group_by': 'user_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- RES.USERS -->
+        <record id="view_res_users_form_bouslidebackendtimeline" model="ir.ui.view">
+            <field name="name">res.users.form.bouslidebackendtimeline</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="bou_slide_backend_ext.view_res_users_form_bouslidebackendext" />
+            <field name="arch" type="xml">
+                <page string="Member in Channel" position="after">
+                    <page string="Playlist" >
+                        <field name="bou_user_playlist_line_ids">
+                            <tree string="Playlist">
+                                <field name="sequence" />
+                                <field name="name" />
+                                <field name="type" />
+                                <field name="channel_id" />
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Watch History" >
+                        <field name="bou_user_watch_history_line_ids">
+                            <tree string="Watch History">
+                                <field name="content_id"/>
+                                <field name="is_display"/>
+                                <field name="create_date"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Search History" >
+                        <field name="bou_user_search_history_line_ids">
+                            <tree string="Search History">
+                                <field name="name"/>
+                                <field name="is_display"/>
+                                <field name="create_date"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Subscribed">
+                        <field name="bou_channel_subscribed_line_ids">
+                            <tree string="Subcribed">
+                                <field name="sequence" />
+                                <field name="channel_id" />
+                                <field name="create_date"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Follow Album">
+                        <field name="bou_album_follow_line_ids">
+                            <tree string="Follow Album">
+                                <field name="sequence" />
+                                <field name="playlist_id" />
+                                <field name="create_date"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+        
+        <record id="action_ir_bou_channel_post_bouslidebackendtimeline" model="ir.actions.act_window">
+            <field name="name">Channel Posts</field>
+            <field name="res_model">bou.channel.post</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <record id="action_ir_bou_playlist_bouslidebackendtimeline" model="ir.actions.act_window">
+            <field name="name">Playlist</field>
+            <field name="res_model">bou.playlist</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_open_channel_timeline_tree" model="ir.actions.act_window">
+            <field name="name">Channel Timeline</field>
+            <field name="res_model">bou.channel.post</field>
+            <field name="view_id" ref="view_bou_channel_post_tree_bouslidebackendtimeline"/>
+        </record>
+        
+        <menuitem action="action_ir_bou_channel_post_bouslidebackendtimeline" id="menu_action_ir_bou_channel_post_bouslidebackendtimeline" parent="website_slides.menu_slides" sequence="9"/>
+        <menuitem action="action_ir_bou_playlist_bouslidebackendtimeline" id="menu_action_ir_bou_playlist_bouslidebackendtimeline" parent="website_slides.menu_slides" sequence="9"/>
+        
+    </data>
+</openerp>

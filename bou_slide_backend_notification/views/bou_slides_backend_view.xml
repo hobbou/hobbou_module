@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <!-- BOU.USER.NOTIFICATION VIEWS -->
+        <record model="ir.ui.view" id="view_bou_user_notification_tree_bouslidebackendnotification">
+            <field name="name">view.bou.user.notification.tree.bouslidebackendnotification</field>
+            <field name="model">bou.user.notification</field>
+            <field name="arch" type="xml">
+                <tree string="User Notification">
+                    <field name="create_date" />
+                    <field name="user_id" />
+                    <field name="channel_id" />
+                    <field name="sender_id" />
+                    <field name="content_id" />
+                    <field name="notification_type" />
+                    <field name="read" />
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_bou_user_notification_form_bouslidebackendnotification">
+            <field name="name">view.bou.user.notification.form.bouslidebackendnotification</field>
+            <field name="model">bou.user.notification</field>
+            <field name="arch" type="xml">
+                <form string="User Notification">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="user_id" />
+                                <field name="channel_id" />
+                                <field name="content_id" />                                
+                            </group>
+                            <group>
+                                <field name="sender_id" />
+                                <field name="notification_type" />
+                                <field name="read" />
+                                <field name="active" />                                
+                            </group>                            
+                        </group>
+                        <label for="description"/>
+                        <field name="description" colspan="4" nolabel="1"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+       
+        <record model="ir.ui.view" id="view_bou_user_notification_search_bouslidebackendnotification">
+            <field name="name">view.bou.user.notification.search.bouslidebackendnotification</field>
+            <field name="model">bou.user.notification</field>
+            <field name="arch" type="xml">
+                <search string="Search Slides">
+                    <field name="user_id" />
+                    <field name="channel_id"/>
+                    <field name="content_id"/>
+                    <field name="notification_type"/>
+                    <field name="description" />
+                    <group expand="0" string="Group By">
+                        <filter string="Owner User" domain="[]" context="{'group_by': 'user_id'}"/>
+                        <filter string="Channel" domain="[]" context="{'group_by': 'channel_id'}"/>
+                        <filter string="Notification Type" domain="[]" context="{'group_by': 'notification_type'}"/>                        
+                        <filter string="Sender" domain="[]" context="{'group_by': 'sender_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- RES.USERS -->
+        <record id="view_res_users_form_bouslidebackendcomment" model="ir.ui.view">
+            <field name="name">res.users.form.bouslidebackendcomment</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="bou_slide_backend_ext.view_res_users_form_bouslidebackendext" />
+            <field name="arch" type="xml">
+                <page string="Member in Channel" position="after">
+                    <page string="Notification">
+                        <field name="fal_notification_ids" />
+                    </page>
+                </page>
+            </field>
+        </record>
+   
+        <record id="action_ir_bou_user_notification_bouslidebackendnotification" model="ir.actions.act_window">
+            <field name="name">User Notification</field>
+            <field name="res_model">bou.user.notification</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem action="action_ir_bou_user_notification_bouslidebackendnotification" id="menu_action_bou_user_notification_bouslidebackendnotification" parent="website_slides.menu_slides" sequence="99"/>
+    
+    </data>
+</openerp>

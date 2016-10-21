@@ -1,0 +1,1823 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- tag data -->
+        <record id="bou_tag_christian" model="slide.tag">
+            <field name="name">Christian</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="bou_tag_pop" model="slide.tag">
+            <field name="name">Pop</field>
+            <field name="sequence">20</field>
+        </record>
+        
+        <record id="bou_tag_edm" model="slide.tag">
+            <field name="name">EDM / Dance</field>
+            <field name="sequence">30</field>
+        </record>
+        
+        <record id="bou_tag_hiphop" model="slide.tag">
+            <field name="name">Hip Hop</field>
+            <field name="sequence">40</field>
+        </record>
+        
+        <record id="bou_tag_country" model="slide.tag">
+            <field name="name">Country</field>
+            <field name="sequence">50</field>
+        </record>
+        
+        <record id="bou_tag_rock" model="slide.tag">
+            <field name="name">Rock</field>
+            <field name="sequence">60</field>
+        </record>
+        
+        <record id="bou_tag_rnb" model="slide.tag">
+            <field name="name">RnB</field>
+            <field name="sequence">70</field>
+        </record>
+        
+        <record id="bou_tag_kids" model="slide.tag">
+            <field name="name">Kids</field>
+            <field name="sequence">80</field>
+        </record>
+        
+        <record id="bou_tag_romance" model="slide.tag">
+            <field name="name">Romance</field>
+            <field name="sequence">90</field>
+        </record>
+        
+        <record id="bou_tag_chill" model="slide.tag">
+            <field name="name">Chill</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_blues" model="slide.tag">
+            <field name="name">Blues</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_jazz" model="slide.tag">
+            <field name="name">Jazz</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_classical" model="slide.tag">
+            <field name="name">Classical</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_punk" model="slide.tag">
+            <field name="name">Punk</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_reggae" model="slide.tag">
+            <field name="name">Reggae</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_workout" model="slide.tag">
+            <field name="name">Workout</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_alternative" model="slide.tag">
+            <field name="name">Alternative</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_metal" model="slide.tag">
+            <field name="name">Metal</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_buddhist" model="slide.tag">
+            <field name="name">Buddhist</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_comedy" model="slide.tag">
+            <field name="name">Comedy</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_funk" model="slide.tag">
+            <field name="name">Funk</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_cover" model="slide.tag">
+            <field name="name">Cover</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_trance" model="slide.tag">
+            <field name="name">Trance</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_dangdut" model="slide.tag">
+            <field name="name">Dangdut</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_trot" model="slide.tag">
+            <field name="name">Trot</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_moslem" model="slide.tag">
+            <field name="name">Moslem</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_enka" model="slide.tag">
+            <field name="name">Enka</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_kpop" model="slide.tag">
+            <field name="name">K-pop</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_jpop" model="slide.tag">
+            <field name="name">J-pop</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_jrock" model="slide.tag">
+            <field name="name">J-rock</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_cpop" model="slide.tag">
+            <field name="name">C-pop</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_indie" model="slide.tag">
+            <field name="name">Indie</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_folk" model="slide.tag">
+            <field name="name">Folk</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_soul" model="slide.tag">
+            <field name="name">Soul</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_latino" model="slide.tag">
+            <field name="name">Latino</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_hindi" model="slide.tag">
+            <field name="name">Hindi</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_opera" model="slide.tag">
+            <field name="name">Opera</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_easylistening" model="slide.tag">
+            <field name="name">Easy Listening</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_trailer" model="slide.tag">
+            <field name="name">Trailer</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_action" model="slide.tag">
+            <field name="name">Action</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_adventure" model="slide.tag">
+            <field name="name">Adventure</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_crime" model="slide.tag">
+            <field name="name">Crime</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_fantasy" model="slide.tag">
+            <field name="name">Fantasy</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_historical" model="slide.tag">
+            <field name="name">Historical</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_horor" model="slide.tag">
+            <field name="name">Horor</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_work" model="slide.tag">
+            <field name="name">Work</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_mystery" model="slide.tag">
+            <field name="name">Mystery</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_drama" model="slide.tag">
+            <field name="name">Drama</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_paranoid" model="slide.tag">
+            <field name="name">Paranoid</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_philosophical" model="slide.tag">
+            <field name="name">Philosophical</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_political" model="slide.tag">
+            <field name="name">Political</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_saga" model="slide.tag">
+            <field name="name">Saga</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_satire" model="slide.tag">
+            <field name="name">Satire</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_science_fiction" model="slide.tag">
+            <field name="name">Science fiction</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_sliceoflife" model="slide.tag">
+            <field name="name">Slice of Life</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_speculative" model="slide.tag">
+            <field name="name">Speculative</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_thriller" model="slide.tag">
+            <field name="name">Thriller</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_urban" model="slide.tag">
+            <field name="name">Urban</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_animation" model="slide.tag">
+            <field name="name">Animation</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_live_action" model="slide.tag">
+            <field name="name">Live Action</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_dorama" model="slide.tag">
+            <field name="name">Dorama</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_kdrama" model="slide.tag">
+            <field name="name">K-drama</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_cdrama" model="slide.tag">
+            <field name="name">C-drama</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_bolywood" model="slide.tag">
+            <field name="name">Bolywood</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_holywood" model="slide.tag">
+            <field name="name">Holywood</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_musical" model="slide.tag">
+            <field name="name">Musical</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_sport" model="slide.tag">
+            <field name="name">Sport</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_esport" model="slide.tag">
+            <field name="name">E-Sport</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_documentary" model="slide.tag">
+            <field name="name">Documentary</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_react" model="slide.tag">
+            <field name="name">React</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_social_experience" model="slide.tag">
+            <field name="name">Social Experience</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_dota" model="slide.tag">
+            <field name="name">Dota</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_minecraft" model="slide.tag">
+            <field name="name">Minecraft</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_wow" model="slide.tag">
+            <field name="name">World of Warcraft</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_lol" model="slide.tag">
+            <field name="name">League of Legend</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_rpg" model="slide.tag">
+            <field name="name">RPG</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_mmorpg" model="slide.tag">
+            <field name="name">MMORPG</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_moba" model="slide.tag">
+            <field name="name">MOBA</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_card" model="slide.tag">
+            <field name="name">Card</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_board" model="slide.tag">
+            <field name="name">Board</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_smite" model="slide.tag">
+            <field name="name">Smite</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_playstation" model="slide.tag">
+            <field name="name">Playstation</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_xbox" model="slide.tag">
+            <field name="name">Xbox</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_fps" model="slide.tag">
+            <field name="name">FPS</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_beauty" model="slide.tag">
+            <field name="name">Beauty</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_handsome" model="slide.tag">
+            <field name="name">Handsome</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_muscle" model="slide.tag">
+            <field name="name">Muscle</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_slim" model="slide.tag">
+            <field name="name">Slim</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_curve" model="slide.tag">
+            <field name="name">Curve</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_cute" model="slide.tag">
+            <field name="name">Cute</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_boy" model="slide.tag">
+            <field name="name">Boy</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_girl" model="slide.tag">
+            <field name="name">Girl</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_lady" model="slide.tag">
+            <field name="name">Lady</field>
+            <field name="sequence">100</field>
+        </record>
+               
+        <record id="bou_tag_youth" model="slide.tag">
+            <field name="name">Youth</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_fun" model="slide.tag">
+            <field name="name">Fun</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_emo" model="slide.tag">
+            <field name="name">Emo</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_hippie" model="slide.tag">
+            <field name="name">Hippie</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_asian" model="slide.tag">
+            <field name="name">Asian</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_ulzzang" model="slide.tag">
+            <field name="name">Ulzzang</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_igo" model="slide.tag">
+            <field name="name">IGO</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_elegant" model="slide.tag">
+            <field name="name">Elegant</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_classy" model="slide.tag">
+            <field name="name">Classy</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_swag" model="slide.tag">
+            <field name="name">Swag</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_sea" model="slide.tag">
+            <field name="name">Sea</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_chinese" model="slide.tag">
+            <field name="name">Chinese</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_indonesian" model="slide.tag">
+            <field name="name">Indonesian</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_malaysian" model="slide.tag">
+            <field name="name">Malaysian</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_korean" model="slide.tag">
+            <field name="name">Korean</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_japan" model="slide.tag">
+            <field name="name">Japan</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_italian" model="slide.tag">
+            <field name="name">Italian</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_mexican" model="slide.tag">
+            <field name="name">Mexican</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_fast" model="slide.tag">
+            <field name="name">Fast</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_vegetarian" model="slide.tag">
+            <field name="name">Vegetarian</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_review" model="slide.tag">
+            <field name="name">Review</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_street" model="slide.tag">
+            <field name="name">Street</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_restaurant" model="slide.tag">
+            <field name="name">Restaurant</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_french" model="slide.tag">
+            <field name="name">French</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_indian" model="slide.tag">
+            <field name="name">Indian</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_bread" model="slide.tag">
+            <field name="name">Bread</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_noodle" model="slide.tag">
+            <field name="name">Noodle</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_spaghetti" model="slide.tag">
+            <field name="name">Spaghetti</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_satay" model="slide.tag">
+            <field name="name">Satay</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_meat" model="slide.tag">
+            <field name="name">Meat</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_hamburger" model="slide.tag">
+            <field name="name">Hamburger</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_hotdog" model="slide.tag">
+            <field name="name">Hotdog</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_sausage" model="slide.tag">
+            <field name="name">Sausage</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_sushi" model="slide.tag">
+            <field name="name">Sushi</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_kimchi" model="slide.tag">
+            <field name="name">Kimchi</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_curry" model="slide.tag">
+            <field name="name">Curry</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_baby" model="slide.tag">
+            <field name="name">Baby</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_vacation" model="slide.tag">
+            <field name="name">Vacation</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_nostalgia" model="slide.tag">
+            <field name="name">Nostalgia</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_children" model="slide.tag">
+            <field name="name">Children</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_hangout" model="slide.tag">
+            <field name="name">Hangout</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_camping" model="slide.tag">
+            <field name="name">Camping</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_memorials" model="slide.tag">
+            <field name="name">Memorial</field>
+            <field name="sequence">100</field>
+        </record>  
+        
+        <record id="bou_tag_dog" model="slide.tag">
+            <field name="name">Dog</field>
+            <field name="sequence">100</field>
+        </record> 
+        
+        <record id="bou_tag_cat" model="slide.tag">
+            <field name="name">Cat</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_bird" model="slide.tag">
+            <field name="name">Bird</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_reptile" model="slide.tag">
+            <field name="name">Reptile</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_mammal" model="slide.tag">
+            <field name="name">Mammal</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_snake" model="slide.tag">
+            <field name="name">Snake</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_fish" model="slide.tag">
+            <field name="name">Fish</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_manga" model="slide.tag">
+            <field name="name">Manga</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_webtoon" model="slide.tag">
+            <field name="name">Webtoon</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_manhwa" model="slide.tag">
+            <field name="name">Manhwa</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_manhua" model="slide.tag">
+            <field name="name">Manhua</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_marvel" model="slide.tag">
+            <field name="name">Marvel</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_dc" model="slide.tag">
+            <field name="name">DC</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_shonen" model="slide.tag">
+            <field name="name">Shonen</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_shojo" model="slide.tag">
+            <field name="name">Shojo</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_disney" model="slide.tag">
+            <field name="name">Disney</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_ootd" model="slide.tag">
+            <field name="name">Outfit of The Day</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_gif" model="slide.tag">
+            <field name="name">GIF</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_wtf" model="slide.tag">
+            <field name="name">WTF</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_sarcasm" model="slide.tag">
+            <field name="name">Sarcasm</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_finance" model="slide.tag">
+            <field name="name">Finance</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_entrepreneur" model="slide.tag">
+            <field name="name">Entrepreneur</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_startup" model="slide.tag">
+            <field name="name">Startup</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_techscience" model="slide.tag">
+            <field name="name">Science &amp; Tech</field>
+            <field name="sequence">100</field>
+        </record>
+                       
+        <record id="bou_tag_entertainment" model="slide.tag">
+            <field name="name">Entertainment</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_business" model="slide.tag">
+            <field name="name">Business</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_soccer" model="slide.tag">
+            <field name="name">Soccer &amp; Futsal</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_football" model="slide.tag">
+            <field name="name">Football</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_basketball" model="slide.tag">
+            <field name="name">Basketball</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_tennis" model="slide.tag">
+            <field name="name">Tennis</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_yoga" model="slide.tag">
+            <field name="name">Yoga</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_gym" model="slide.tag">
+            <field name="name">Gym</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_baseball" model="slide.tag">
+            <field name="name">Baseball</field>
+            <field name="sequence">100</field>
+        </record>
+                
+        <record id="bou_tag_martial_art" model="slide.tag">
+            <field name="name">Martial Arts</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_badminton" model="slide.tag">
+            <field name="name">Badminton</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_racing" model="slide.tag">
+            <field name="name">Racing</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_airsoft" model="slide.tag">
+            <field name="name">Airsoft</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_digital" model="slide.tag">
+            <field name="name">Digital</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_potrait" model="slide.tag">
+            <field name="name">Potrait</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_modern" model="slide.tag">
+            <field name="name">Modern</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_nature" model="slide.tag">
+            <field name="name">Nature</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_wild" model="slide.tag">
+            <field name="name">Wild</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_abstract" model="slide.tag">
+            <field name="name">Abstract</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_graffiti" model="slide.tag">
+            <field name="name">Graffiti</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_magic" model="slide.tag">
+            <field name="name">Magic</field>
+            <field name="sequence">100</field>
+        </record>
+                
+        <record id="bou_tag_painting" model="slide.tag">
+            <field name="name">Painting</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_poetry" model="slide.tag">
+            <field name="name">Poetry</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_tattoo" model="slide.tag">
+            <field name="name">Tattoo</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_hybrid" model="slide.tag">
+            <field name="name">Hybrid</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_oldschool" model="slide.tag">
+            <field name="name">Old School</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_prowrestling" model="slide.tag">
+            <field name="name">Pro Wrestling</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_food" model="slide.tag">
+            <field name="name">Food</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_smallbusiness" model="slide.tag">
+            <field name="name">Small Business</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_agency" model="slide.tag">
+            <field name="name">Agency</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_consulting" model="slide.tag">
+            <field name="name">Consulting</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_event" model="slide.tag">
+            <field name="name">Event</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_advertising" model="slide.tag">
+            <field name="name">Advertising</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_clothing" model="slide.tag">
+            <field name="name">Clothing</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_automotive" model="slide.tag">
+            <field name="name">Automotive</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_property" model="slide.tag">
+            <field name="name">Property</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_apartment" model="slide.tag">
+            <field name="name">Apartment</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_house" model="slide.tag">
+            <field name="name">House</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_tech" model="slide.tag">
+            <field name="name">Tech</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_smartphone" model="slide.tag">
+            <field name="name">Smartphone</field>
+            <field name="sequence">100</field>
+        </record>
+        
+         <record id="bou_tag_notebook" model="slide.tag">
+            <field name="name">Notebook</field>
+            <field name="sequence">100</field>
+        </record>       
+        
+         <record id="bou_tag_gold" model="slide.tag">
+            <field name="name">Gold</field>
+            <field name="sequence">100</field>
+        </record>
+
+         <record id="bou_tag_computer" model="slide.tag">
+            <field name="name">Computer</field>
+            <field name="sequence">100</field>
+        </record>
+
+         <record id="bou_tag_accesory" model="slide.tag">
+            <field name="name">Accesory</field>
+            <field name="sequence">100</field>
+        </record>        
+
+         <record id="bou_tag_camera" model="slide.tag">
+            <field name="name">Camera</field>
+            <field name="sequence">100</field>
+        </record>
+
+         <record id="bou_tag_fashion" model="slide.tag">
+            <field name="name">Fashion</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_fashion" model="slide.tag">
+            <field name="name">Fashion</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_hobby" model="slide.tag">
+            <field name="name">Hobby</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_electronic" model="slide.tag">
+            <field name="name">Electronic</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_movie" model="slide.tag">
+            <field name="name">Movie</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_dating" model="slide.tag">
+            <field name="name">Dating</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_interior" model="slide.tag">
+            <field name="name">Interior</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_office" model="slide.tag">
+            <field name="name">Office</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_travel" model="slide.tag">
+            <field name="name">Travel</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_book" model="slide.tag">
+            <field name="name">Book</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_gaming" model="slide.tag">
+            <field name="name">Gaming</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_flora" model="slide.tag">
+            <field name="name">Flora</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_fauna" model="slide.tag">
+            <field name="name">Fauna</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_music" model="slide.tag">
+            <field name="name">Music</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_medical" model="slide.tag">
+            <field name="name">Medical</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_medicine" model="slide.tag">
+            <field name="name">Medicine</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_action_figure" model="slide.tag">
+            <field name="name">Action Figure</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_toy" model="slide.tag">
+            <field name="name">Toy</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_man" model="slide.tag">
+            <field name="name">Man</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_woman" model="slide.tag">
+            <field name="name">Woman</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_tips" model="slide.tag">
+            <field name="name">Tips</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_cooking" model="slide.tag">
+            <field name="name">Cooking</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_howto" model="slide.tag">
+            <field name="name">How to</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_bar" model="slide.tag">
+            <field name="name">Bar</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_diet" model="slide.tag">
+            <field name="name">Diet</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_fitness" model="slide.tag">
+            <field name="name">Fitness</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_social" model="slide.tag">
+            <field name="name">Social</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_restaurant" model="slide.tag">
+            <field name="name">Restaurant</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_saloon" model="slide.tag">
+            <field name="name">Saloon</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_parody" model="slide.tag">
+            <field name="name">Parody</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_vintage" model="slide.tag">
+            <field name="name">Vintage</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_nightlife" model="slide.tag">
+            <field name="name">Nightlife</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_haircut" model="slide.tag">
+            <field name="name">Haircut</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_mukbang" model="slide.tag">
+            <field name="name">Mukbang</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_language" model="slide.tag">
+            <field name="name">Language</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_english" model="slide.tag">
+            <field name="name">English</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_mandarin" model="slide.tag">
+            <field name="name">Mandarin</field>
+            <field name="sequence">100</field>
+        </record>
+                
+        <record id="bou_tag_programming" model="slide.tag">
+            <field name="name">Programming</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_biology" model="slide.tag">
+            <field name="name">Biology</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_chemical" model="slide.tag">
+            <field name="name">Chemical</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_math" model="slide.tag">
+            <field name="name">Math</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_law" model="slide.tag">
+            <field name="name">Law</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_physic" model="slide.tag">
+            <field name="name">Physic</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_literature" model="slide.tag">
+            <field name="name">Literature</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_accounting" model="slide.tag">
+            <field name="name">Accounting</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_management" model="slide.tag">
+            <field name="name">Management</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_design" model="slide.tag">
+            <field name="name">Design</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_city" model="slide.tag">
+            <field name="name">City</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_electric" model="slide.tag">
+            <field name="name">Electric</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_maintenance" model="slide.tag">
+            <field name="name">Maintenance</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_art" model="slide.tag">
+            <field name="name">Art</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_realityshow" model="slide.tag">
+            <field name="name">Reality Show</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="bou_tag_community" model="slide.tag">
+            <field name="name">Community</field>
+            <field name="sequence">100</field>
+        </record> 
+        
+        <record id="bou_tag_event" model="slide.tag">
+            <field name="name">Event</field>
+            <field name="sequence">100</field>
+        </record> 
+        
+        <record id="bou_tag_element" model="slide.tag">
+            <field name="name">Element</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_space" model="slide.tag">
+            <field name="name">Space</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_life" model="slide.tag">
+            <field name="name">Life</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_time" model="slide.tag">
+            <field name="name">Time</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_earth" model="slide.tag">
+            <field name="name">Earth</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_internet" model="slide.tag">
+            <field name="name">Internet</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_health" model="slide.tag">
+            <field name="name">Health</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_gadget" model="slide.tag">
+            <field name="name">Gadget</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_atom" model="slide.tag">
+            <field name="name">Atom</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_flower" model="slide.tag">
+            <field name="name">Flower</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_fruit" model="slide.tag">
+            <field name="name">Fruit</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_car" model="slide.tag">
+            <field name="name">Car</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_motorcycle" model="slide.tag">
+            <field name="name">Motorcycle</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_quiz" model="slide.tag">
+            <field name="name">Quiz</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_talkshow" model="slide.tag">
+            <field name="name">Talkshow</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_award" model="slide.tag">
+            <field name="name">Award</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_mountain" model="slide.tag">
+            <field name="name">Mountain</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_fishing" model="slide.tag">
+            <field name="name">Fishing</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_scenery" model="slide.tag">
+            <field name="name">Scenery</field>
+            <field name="sequence">100</field>
+        </record>
+        
+        <record id="bou_tag_tree" model="slide.tag">
+            <field name="name">Tree</field>
+            <field name="sequence">100</field>
+        </record>
+               
+        <!-- category data -->
+        <record id="bou_category_selfie" model="bou.slide.category">
+            <field name="name">Selfie</field>
+            <field name="sequence">10</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_boy'), ref('bou_tag_girl'), ref('bou_tag_work'),
+                        ref('bou_tag_beauty'), ref('bou_tag_handsome'), ref('bou_tag_muscle'), 
+                        ref('bou_tag_slim'), ref('bou_tag_curve'), ref('bou_tag_cute'),
+                        ref('bou_tag_youth'), ref('bou_tag_fun'), ref('bou_tag_emo'), 
+                        ref('bou_tag_hippie'), ref('bou_tag_asian'), ref('bou_tag_ulzzang'),
+                        ref('bou_tag_igo'), ref('bou_tag_elegant'), ref('bou_tag_classy'), 
+                        ref('bou_tag_urban'), ref('bou_tag_swag'), ref('bou_tag_kpop'),
+                        ref('bou_tag_jpop'), ref('bou_tag_jrock'), ref('bou_tag_cpop'),
+                        ref('bou_tag_indie'), ref('bou_tag_hindi'), ref('bou_tag_hiphop'),
+                        ref('bou_tag_man'), ref('bou_tag_woman'), ref('bou_tag_lady'),
+                        ref('bou_tag_community'), ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+
+        <record id="bou_category_food" model="bou.slide.category">
+            <field name="name">Food</field>
+            <field name="sequence">20</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_sea'), ref('bou_tag_chinese'), ref('bou_tag_indonesian'),
+                        ref('bou_tag_malaysian'), ref('bou_tag_korean'), ref('bou_tag_japan'), 
+                        ref('bou_tag_italian'), ref('bou_tag_mexican'), ref('bou_tag_fast'),
+                        ref('bou_tag_cooking'), ref('bou_tag_vegetarian'), ref('bou_tag_street'), 
+                        ref('bou_tag_restaurant'), ref('bou_tag_asian'), ref('bou_tag_french'),
+                        ref('bou_tag_noodle'), ref('bou_tag_elegant'), ref('bou_tag_classy'), 
+                        ref('bou_tag_urban'), ref('bou_tag_indian'), ref('bou_tag_bread'),
+                        ref('bou_tag_spaghetti'), ref('bou_tag_satay'), ref('bou_tag_meat'), 
+                        ref('bou_tag_hamburger'), ref('bou_tag_hotdog'), ref('bou_tag_sausage'),
+                        ref('bou_tag_sushi'), ref('bou_tag_kimchi'), ref('bou_tag_curry'),
+                        ref('bou_tag_tips'), ref('bou_tag_howto'), ref('bou_tag_review'),
+                        ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_family" model="bou.slide.category">
+            <field name="name">Family</field>
+            <field name="sequence">30</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_baby'), ref('bou_tag_vacation'), ref('bou_tag_nostalgia'),
+                        ref('bou_tag_children'), ref('bou_tag_hangout'), ref('bou_tag_camping'), 
+                        ref('bou_tag_memorials'), ref('bou_tag_fun'), ref('bou_tag_cute'),
+                        ref('bou_tag_kids'), ref('bou_tag_tips'), ref('bou_tag_howto'),
+                        ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+
+        <record id="bou_category_meme" model="bou.slide.category">
+            <field name="name">Meme</field>
+            <field name="sequence">40</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_baby'), ref('bou_tag_gif'), ref('bou_tag_wtf'),
+                        ref('bou_tag_sarcasm'), ref('bou_tag_fun'), ref('bou_tag_cute'),
+                        ref('bou_tag_comedy'), ref('bou_tag_parody'), ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_news" model="bou.slide.category">
+            <field name="name">News</field>
+            <field name="sequence">50</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_sport'), ref('bou_tag_esport'), ref('bou_tag_political'),
+                        ref('bou_tag_finance'), ref('bou_tag_entrepreneur'), ref('bou_tag_work'),
+                        ref('bou_tag_startup'), ref('bou_tag_techscience'), ref('bou_tag_entertainment'),
+                        ref('bou_tag_business'), ref('bou_tag_crime'), ref('bou_tag_tips'),
+                        ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+
+        <record id="bou_category_sport" model="bou.slide.category">
+            <field name="name">Sport</field>
+            <field name="sequence">60</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_soccer'), ref('bou_tag_football'), ref('bou_tag_basketball'),
+                        ref('bou_tag_tennis'), ref('bou_tag_yoga'), ref('bou_tag_gym'),
+                        ref('bou_tag_baseball'), ref('bou_tag_martial_art'), ref('bou_tag_badminton'),
+                        ref('bou_tag_racing'), ref('bou_tag_airsoft'), ref('bou_tag_prowrestling'),
+                        ref('bou_tag_tips'), ref('bou_tag_howto'), ref('bou_tag_fitness'),
+                        ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_art" model="bou.slide.category">
+            <field name="name">Art</field>
+            <field name="sequence">70</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_digital'), ref('bou_tag_potrait'), ref('bou_tag_modern'),
+                        ref('bou_tag_nature'), ref('bou_tag_wild'), ref('bou_tag_abstract'),
+                        ref('bou_tag_graffiti'), ref('bou_tag_magic'), ref('bou_tag_street'),
+                        ref('bou_tag_painting'), ref('bou_tag_poetry'), ref('bou_tag_tattoo'),
+                        ref('bou_tag_hybrid'), ref('bou_tag_oldschool'), ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+
+        <record id="bou_category_fashion" model="bou.slide.category">
+            <field name="name">Fashion</field>
+            <field name="sequence">80</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_christian'), ref('bou_tag_boy'), ref('bou_tag_girl'), 
+                        ref('bou_tag_work'), ref('bou_tag_beauty'), ref('bou_tag_handsome'),
+                        ref('bou_tag_hippie'), ref('bou_tag_asian'), ref('bou_tag_ulzzang'),
+                        ref('bou_tag_baby'), ref('bou_tag_elegant'), ref('bou_tag_classy'), 
+                        ref('bou_tag_urban'), ref('bou_tag_swag'), ref('bou_tag_kpop'),
+                        ref('bou_tag_jpop'), ref('bou_tag_jrock'), ref('bou_tag_cpop'),
+                        ref('bou_tag_indie'), ref('bou_tag_hindi'), ref('bou_tag_hiphop'),
+                        ref('bou_tag_ootd'), ref('bou_tag_react'), ref('bou_tag_review'),
+                        ref('bou_tag_oldschool'), ref('bou_tag_vintage'), ref('bou_tag_kids'),
+                        ref('bou_tag_man'), ref('bou_tag_woman'), ref('bou_tag_howto'),
+                        ref('bou_tag_haircut'), ref('bou_tag_lady'), ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_music" model="bou.slide.category">
+            <field name="name">Music</field>
+            <field name="sequence">90</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_christian'), ref('bou_tag_pop'), ref('bou_tag_edm'), 
+                        ref('bou_tag_hiphop'), ref('bou_tag_country'), ref('bou_tag_rock'),
+                        ref('bou_tag_rnb'), ref('bou_tag_kids'), ref('bou_tag_romance'), 
+                        ref('bou_tag_blues'), ref('bou_tag_jazz'), ref('bou_tag_classical'),
+                        ref('bou_tag_punk'), ref('bou_tag_reggae'), ref('bou_tag_workout'), 
+                        ref('bou_tag_alternative'), ref('bou_tag_buddhist'), ref('bou_tag_comedy'),
+                        ref('bou_tag_funk'), ref('bou_tag_dangdut'), ref('bou_tag_trot'), 
+                        ref('bou_tag_moslem'), ref('bou_tag_enka'), ref('bou_tag_kpop'),
+                        ref('bou_tag_jpop'), ref('bou_tag_jrock'), ref('bou_tag_cpop'),
+                        ref('bou_tag_indie'), ref('bou_tag_folk'), ref('bou_tag_soul'), 
+                        ref('bou_tag_latino'), ref('bou_tag_hindi'), ref('bou_tag_easylistening'),
+                        ref('bou_tag_opera'), ref('bou_tag_trance'), ref('bou_tag_oldschool'),
+                        ref('bou_tag_parody'), ref('bou_tag_metal'), ref('bou_tag_cover'),
+                        ref('bou_tag_event'), ref('bou_tag_chill'),                        
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_game" model="bou.slide.category">
+            <field name="name">Game</field>
+            <field name="sequence">100</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_trailer'), ref('bou_tag_action'), ref('bou_tag_adventure'), 
+                        ref('bou_tag_crime'), ref('bou_tag_fantasy'), ref('bou_tag_historical'),
+                        ref('bou_tag_horor'), ref('bou_tag_mystery'), ref('bou_tag_paranoid'), 
+                        ref('bou_tag_philosophical'), ref('bou_tag_political'), ref('bou_tag_saga'),
+                        ref('bou_tag_science_fiction'), ref('bou_tag_thriller'), ref('bou_tag_romance'),
+                        ref('bou_tag_sport'), ref('bou_tag_esport'), ref('bou_tag_dota'),
+                        ref('bou_tag_minecraft'), ref('bou_tag_comedy'), ref('bou_tag_wow'),
+                        ref('bou_tag_rpg'), ref('bou_tag_mmorpg'), ref('bou_tag_playstation'),
+                        ref('bou_tag_xbox'), ref('bou_tag_lol'), ref('bou_tag_moba'), 
+                        ref('bou_tag_fps'), ref('bou_tag_smite'), ref('bou_tag_card'),
+                        ref('bou_tag_board'), ref('bou_tag_oldschool'), ref('bou_tag_howto'),
+                        ref('bou_tag_drama'), ref('bou_tag_event'),
+                        
+                    ]
+                )]"
+            /> 
+        </record>
+        
+        <record id="bou_category_movie" model="bou.slide.category">
+            <field name="name">Movie</field>
+            <field name="sequence">110</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_trailer'), ref('bou_tag_action'), ref('bou_tag_adventure'), 
+                        ref('bou_tag_crime'), ref('bou_tag_fantasy'), ref('bou_tag_historical'),
+                        ref('bou_tag_horor'), ref('bou_tag_mystery'), ref('bou_tag_paranoid'), 
+                        ref('bou_tag_philosophical'), ref('bou_tag_political'), ref('bou_tag_saga'),
+                        ref('bou_tag_satire'), ref('bou_tag_science_fiction'), ref('bou_tag_sliceoflife'), 
+                        ref('bou_tag_speculative'), ref('bou_tag_thriller'), ref('bou_tag_urban'),
+                        ref('bou_tag_animation'), ref('bou_tag_live_action'), ref('bou_tag_christian'), 
+                        ref('bou_tag_romance'), ref('bou_tag_comedy'), ref('bou_tag_dorama'),
+                        ref('bou_tag_cdrama'), ref('bou_tag_kdrama'), ref('bou_tag_moslem'),
+                        ref('bou_tag_bolywood'), ref('bou_tag_holywood'), ref('bou_tag_musical'), 
+                        ref('bou_tag_buddhist'), ref('bou_tag_documentary'), ref('bou_tag_sport'),
+                        ref('bou_tag_classical'), ref('bou_tag_react'), ref('bou_tag_review'),
+                        ref('bou_tag_drama'), ref('bou_tag_indie'), ref('bou_tag_event'),
+                    ]
+                )]"
+            /> 
+        </record>
+
+        <record id="bou_category_business" model="bou.slide.category">
+            <field name="name">Business</field>
+            <field name="sequence">120</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_startup'), ref('bou_tag_food'), ref('bou_tag_smallbusiness'), 
+                        ref('bou_tag_agency'), ref('bou_tag_consulting'), ref('bou_tag_event'),
+                        ref('bou_tag_advertising'), ref('bou_tag_work'), ref('bou_tag_clothing'), 
+                        ref('bou_tag_automotive'), ref('bou_tag_property'), ref('bou_tag_apartment'),
+                        ref('bou_tag_house'), ref('bou_tag_tech'), ref('bou_tag_smartphone'), 
+                        ref('bou_tag_notebook'), ref('bou_tag_gold'), ref('bou_tag_computer'),
+                        ref('bou_tag_animation'), ref('bou_tag_camera'), ref('bou_tag_accesory'), 
+                        ref('bou_tag_fashion'), ref('bou_tag_hobby'), ref('bou_tag_electronic'),
+                        ref('bou_tag_movie'), ref('bou_tag_entertainment'), ref('bou_tag_dating'),
+                        ref('bou_tag_interior'), ref('bou_tag_office'), ref('bou_tag_travel'), 
+                        ref('bou_tag_book'), ref('bou_tag_gaming'), ref('bou_tag_music'),
+                        ref('bou_tag_flora'), ref('bou_tag_medical'), ref('bou_tag_medicine'), 
+                        ref('bou_tag_fauna'), ref('bou_tag_action_figure'), ref('bou_tag_card'),
+                        ref('bou_tag_baby'), ref('bou_tag_boy'), ref('bou_tag_girl'),
+                        ref('bou_tag_man'), ref('bou_tag_woman'), ref('bou_tag_saloon'),
+                        ref('bou_tag_toy'), ref('bou_tag_howto'), ref('bou_tag_tips'),
+                    ]
+                )]"
+            />
+        </record>
+
+        <record id="bou_category_lifestyle" model="bou.slide.category">
+            <field name="name">Lifestyle</field>
+            <field name="sequence">130</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_bar'), ref('bou_tag_diet'), ref('bou_tag_dating'), 
+                        ref('bou_tag_nightlife'), ref('bou_tag_vacation'), ref('bou_tag_fitness'),
+                        ref('bou_tag_saloon'), ref('bou_tag_fashion'), ref('bou_tag_entertainment'), 
+                        ref('bou_tag_social'), ref('bou_tag_restaurant'), ref('bou_tag_review'),
+                        ref('bou_tag_react'), ref('bou_tag_gym'), ref('bou_tag_haircut'),
+                        ref('bou_tag_tattoo'), ref('bou_tag_howto'), ref('bou_tag_tips'),
+                        ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_education" model="bou.slide.category">
+            <field name="name">Education</field>
+            <field name="sequence">140</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_historical'), ref('bou_tag_philosophical'), ref('bou_tag_political'), 
+                        ref('bou_tag_japan'), ref('bou_tag_english'), ref('bou_tag_mandarin'),
+                        ref('bou_tag_programming'), ref('bou_tag_biology'), ref('bou_tag_chemical'), 
+                        ref('bou_tag_math'), ref('bou_tag_law'), ref('bou_tag_physic'),
+                        ref('bou_tag_finance'), ref('bou_tag_literature'), ref('bou_tag_accounting'),
+                        ref('bou_tag_management'), ref('bou_tag_design'), ref('bou_tag_music'),
+                        ref('bou_tag_art'), ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+
+        <record id="bou_category_sciencetech" model="bou.slide.category">
+            <field name="name">Science &amp; Tech</field>
+            <field name="sequence">150</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_space'), ref('bou_tag_life'), ref('bou_tag_earth'),
+                        ref('bou_tag_computer'), ref('bou_tag_internet'), ref('bou_tag_time'),
+                        ref('bou_tag_element'), ref('bou_tag_health'), ref('bou_tag_gadget'),
+                        ref('bou_tag_review'), ref('bou_tag_event'), ref('bou_tag_atom'),
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_automotive" model="bou.slide.category">
+            <field name="name">Automotive</field>
+            <field name="sequence">160</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [                        
+                        ref('bou_tag_car'), ref('bou_tag_motorcycle'), ref('bou_tag_accesory'),
+                        ref('bou_tag_sport'), ref('bou_tag_oldschool'), ref('bou_tag_city'),
+                        ref('bou_tag_electric'), ref('bou_tag_racing'), ref('bou_tag_maintenance'),
+                        ref('bou_tag_review'), ref('bou_tag_howto'), ref('bou_tag_tips'),
+                        ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+
+        <record id="bou_category_comic" model="bou.slide.category">
+            <field name="name">Comic</field>
+            <field name="sequence">170</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_manga'), ref('bou_tag_webtoon'), ref('bou_tag_manhwa'),
+                        ref('bou_tag_manhua'), ref('bou_tag_shonen'),  ref('bou_tag_shojo'),
+                        ref('bou_tag_marvel'), ref('bou_tag_dc'), ref('bou_tag_disney'),
+                        ref('bou_tag_action'), ref('bou_tag_adventure'), ref('bou_tag_musical'),
+                        ref('bou_tag_crime'), ref('bou_tag_fantasy'), ref('bou_tag_historical'),
+                        ref('bou_tag_horor'), ref('bou_tag_mystery'), ref('bou_tag_paranoid'), 
+                        ref('bou_tag_philosophical'), ref('bou_tag_political'), ref('bou_tag_saga'),
+                        ref('bou_tag_satire'), ref('bou_tag_science_fiction'), ref('bou_tag_sliceoflife'), 
+                        ref('bou_tag_speculative'), ref('bou_tag_thriller'), ref('bou_tag_urban'),
+                        ref('bou_tag_animation'), ref('bou_tag_live_action'), ref('bou_tag_christian'), 
+                        ref('bou_tag_romance'), ref('bou_tag_comedy'), ref('bou_tag_moslem'),
+                        ref('bou_tag_buddhist'), ref('bou_tag_documentary'), ref('bou_tag_sport'),
+                        ref('bou_tag_classical'), ref('bou_tag_react'), ref('bou_tag_review'),
+                        ref('bou_tag_drama'), ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_animal" model="bou.slide.category">
+            <field name="name">Animal</field>
+            <field name="sequence">180</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_dog'), ref('bou_tag_cat'), ref('bou_tag_bird'),
+                        ref('bou_tag_snake'), ref('bou_tag_reptile'), ref('bou_tag_mammal'),
+                        ref('bou_tag_fish'), ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+
+        <record id="bou_category_variety" model="bou.slide.category">
+            <field name="name">Variety</field>
+            <field name="sequence">190</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_quiz'), ref('bou_tag_talkshow'), ref('bou_tag_mukbang'),
+                        ref('bou_tag_comedy'), ref('bou_tag_music'), ref('bou_tag_realityshow'),
+                        ref('bou_tag_cooking'), ref('bou_tag_entertainment'), ref('bou_tag_event'),
+                        ref('bou_tag_award'), ref('bou_tag_social_experience')
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_cosplay" model="bou.slide.category">
+            <field name="name">Cosplay</field>
+            <field name="sequence">200</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_boy'), ref('bou_tag_girl'), ref('bou_tag_work'),
+                        ref('bou_tag_beauty'), ref('bou_tag_handsome'), ref('bou_tag_muscle'), 
+                        ref('bou_tag_slim'), ref('bou_tag_curve'), ref('bou_tag_cute'),
+                        ref('bou_tag_youth'), ref('bou_tag_fun'), ref('bou_tag_emo'), 
+                        ref('bou_tag_asian'), ref('bou_tag_ulzzang'), ref('bou_tag_swag'),
+                        ref('bou_tag_igo'), ref('bou_tag_elegant'), ref('bou_tag_classy'), 
+                        ref('bou_tag_kpop'), ref('bou_tag_jpop'), ref('bou_tag_jrock'),
+                        ref('bou_tag_man'), ref('bou_tag_woman'), ref('bou_tag_lady'),
+                        ref('bou_tag_community'), ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_nature" model="bou.slide.category">
+            <field name="name">Nature &amp; Wildlife</field>
+            <field name="sequence">210</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_adventure'), ref('bou_tag_sea'), ref('bou_tag_mountain'),
+                        ref('bou_tag_fishing'), ref('bou_tag_scenery'), ref('bou_tag_tree'),
+                        ref('bou_tag_flower'), ref('bou_tag_fruit'), ref('bou_tag_wild'),
+                        ref('bou_tag_event'), ref('bou_tag_flora'), ref('bou_tag_fauna'),
+                    ]
+                )]"
+            />
+        </record>
+        
+        <record id="bou_category_quote" model="bou.slide.category">
+            <field name="name">Quote</field>
+            <field name="sequence">220</field>
+            <field name="slide_tag_ids"
+                eval="[(6, 0, 
+                    [
+                        ref('bou_tag_philosophical'), ref('bou_tag_political'), ref('bou_tag_christian'),
+                        ref('bou_tag_romance'), ref('bou_tag_moslem'), ref('bou_tag_parody'),
+                        ref('bou_tag_sliceoflife'), ref('bou_tag_comedy'), ref('bou_tag_hindi'),
+                        ref('bou_tag_finance'), ref('bou_tag_buddhist'), ref('bou_tag_historical'),
+                        ref('bou_tag_event'),
+                    ]
+                )]"
+            />
+        </record>
+               
+        
+  </data>
+</openerp>
+

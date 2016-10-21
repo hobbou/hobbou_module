@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- SLIDE.TAG -->
+        <record model="ir.ui.view" id="view_slide_tag_form_bouslidebackendext">
+            <field name="name">slide.tag.form.bouslidebackendext</field>
+            <field name="model">slide.tag</field>
+            <field name="inherit_id" ref="website_slides.view_slide_tag_form" />
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="active" />
+                        </group>
+                        <group>
+                            <field name="bou_tag_highlight" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Category">
+                            <field name="bou_category_ids" />
+                        </page>
+                    </notebook>
+                    <label for="description"/>
+                    <field name="description" colspan="4" nolabel="1"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- SLIDE.CATEGORY -->
+        <record model="ir.ui.view" id="view_slides_category_form_bouslidebackendext">
+            <field name="name">bou.slide.category.form.bouslidebackendext</field>
+            <field name="model">bou.slide.category</field>
+            <field name="arch" type="xml">
+                <form string="Category">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="active" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Tags">
+                                <field name="slide_tag_ids" />
+                            </page>
+                        </notebook>
+                        <label for="description"/>
+                        <field name="description" colspan="4" nolabel="1"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_slides_category_tree_bouslidebackendext" model="ir.ui.view">
+            <field name="name">bou.slide.category.tree.bouslidebackendext</field>
+            <field name="model">bou.slide.category</field>
+            <field name="arch" type="xml">
+                <tree string="Category">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- SLIDE.CHANNEL VIEWS -->
+        <record model="ir.ui.view" id="view_slide_channel_form_bouslidebackendext">
+            <field name="name">slide.channel.form.bouslidebackendext</field>
+            <field name="model">slide.channel</field>
+            <field name="inherit_id" ref="website_slides.view_slide_channel_form" />
+            <field name="arch" type="xml">
+                <field name="category_ids" position="after">
+                    <label for="bou_slide_category_id"/>
+                    <field name="bou_slide_category_id"/>
+                    <field name="bou_slide_section_ids" widget="many2many_tags" placeholder="Sections" />
+                </field>
+                <field name="group_ids" position="after">
+                    <field name="active" />
+                </field>
+                <page string="General" position="after">
+                    <page string="Slides">
+                        <field name="slide_ids" />
+                    </page>
+                    <page string="Team Member">
+                        <field name="bou_team_member_ids" />
+                    </page>
+                </page>
+            </field>
+        </record>
+        
+
+        <!-- SLIDE.SLIDE -->
+        <record id="view_slide_slide_form_bouslidebackendext" model="ir.ui.view">
+            <field name="name">slide.slide.form.bouslidebackendext</field>
+            <field name="model">slide.slide</field>
+            <field name="inherit_id" ref="website_slides.view_slide_slide_form" />
+            <field name="arch" type="xml">
+                <field name="category_id" position="after">
+                    <field name="bou_slide_category_id" />
+                </field>
+                <field name="datas" position="after">
+                    <field name="active" />
+                </field>
+            </field>
+        </record>
+
+        <!-- RES.USERS -->
+        <record id="view_res_users_tree_bouslidebackendext" model="ir.ui.view">
+            <field name="name">res.users.tree.bouslidebackendext</field>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <tree string="Users">
+                    <field name="name"/>
+                    <field name="login" />
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_res_users_form_bouslidebackendext" model="ir.ui.view">
+            <field name="name">res.users.form.bouslidebackendext</field>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <form string="Users">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="login" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Channel">
+                                <field name="bou_channel_ids" />
+                            </page>
+                            <page string="Member in Channel">
+                                <field name="bou_member_in_channel_ids" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_ir_slide_category_bouslidebackendext" model="ir.actions.act_window">
+            <field name="name">HowBou Categories</field>
+            <field name="res_model">bou.slide.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <record id="action_ir_res_users_bouslidebackendext" model="ir.actions.act_window">
+            <field name="name">User List</field>
+            <field name="res_model">res.users</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_windows_view_res_users_tree_bouslidebackendext">
+            <field name="sequence" eval="77"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_res_users_tree_bouslidebackendext"/>
+            <field name="act_window_id" ref="action_ir_res_users_bouslidebackendext"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="action_windows_view_res_users_form_bouslidebackendext">
+            <field name="sequence" eval="77"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_res_users_form_bouslidebackendext"/>
+            <field name="act_window_id" ref="action_ir_res_users_bouslidebackendext"/>
+        </record>
+        
+        <menuitem action="action_ir_slide_category_bouslidebackendext" id="menu_action_ir_bou_slide_category" parent="website_slides.menu_slides" sequence="2"/>
+        <menuitem action="action_ir_res_users_bouslidebackendext" id="menu_action_ir_res_users" parent="website_slides.menu_slides" sequence="99"/>
+        
+    </data>
+</openerp>
