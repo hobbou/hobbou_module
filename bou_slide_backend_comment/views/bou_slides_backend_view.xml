@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         
         <!-- BOU.COMMENT VIEWS -->
@@ -120,4 +120,4 @@
         <menuitem action="action_ir_bou_comment_bouslidebackendcomment" id="menu_action_bou_comment_bouslidebackendcomment" parent="website_slides.menu_website_slides_root" sequence="99"/>
     
     </data>
-</openerp>
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
 
         <!-- SLIDE.CHANNEL VIEWS -->
@@ -8,12 +8,12 @@
             <field name="model">slide.channel</field>
             <field name="inherit_id" ref="website_slides.view_slide_channel_form" />
             <field name="arch" type="xml">                
-                <button name="open_website_url" position="after">
+                <xpath expr="/form/sheet/div/button/field[@name='website_published']/.." position="after">
                     <button class="oe_inline oe_stat_button" name="action_open_channel_timeline"
                         type="object" icon="fa-globe" string="Timeline">
                     </button>
-                </button>
-                <page string="General" position="after">
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/group/group/field[@name='promote_strategy']/../../.." position="after">
                     <page string="Timeline">
                         <field name="bou_post_ids" />
                     </page>
@@ -34,7 +34,7 @@
                             </tree>
                         </field>
                     </page>
-                </page>
+                </xpath>
             </field>
         </record>
         
@@ -170,7 +170,7 @@
             <field name="model">res.users</field>
             <field name="inherit_id" ref="bou_slide_backend_ext.view_res_users_form_bouslidebackendext" />
             <field name="arch" type="xml">
-                <page string="Member in Channel" position="after">
+                <xpath expr="/form/sheet/notebook/page/field[@name='bou_member_in_channel_ids']/.." position="after">
                     <page string="Playlist" >
                         <field name="bou_user_playlist_line_ids">
                             <tree string="Playlist">
@@ -217,7 +217,7 @@
                             </tree>
                         </field>
                     </page>
-                </page>
+                </xpath>
             </field>
         </record>
         
@@ -245,4 +245,4 @@
         <menuitem action="action_ir_bou_playlist_bouslidebackendtimeline" id="menu_action_ir_bou_playlist_bouslidebackendtimeline" parent="website_slides.menu_website_slides_root" sequence="9"/>
         
     </data>
-</openerp>
+</odoo>

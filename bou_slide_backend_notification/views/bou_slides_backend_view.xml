@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         
         <!-- BOU.USER.NOTIFICATION VIEWS -->
@@ -89,4 +89,4 @@
         <menuitem action="action_ir_bou_user_notification_bouslidebackendnotification" id="menu_action_bou_user_notification_bouslidebackendnotification" parent="website_slides.menu_website_slides_root" sequence="99"/>
     
     </data>
-</openerp>
+</odoo>
