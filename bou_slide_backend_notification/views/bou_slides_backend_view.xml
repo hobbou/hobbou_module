@@ -71,11 +71,11 @@
             <field name="model">res.users</field>
             <field name="inherit_id" ref="bou_slide_backend_ext.view_res_users_form_bouslidebackendext" />
             <field name="arch" type="xml">
-                <page string="Member in Channel" position="after">
+                <xpath expr="/form/sheet/notebook/page/field[@name='bou_member_in_channel_ids']/.." position="after">
                     <page string="Notification">
                         <field name="fal_notification_ids" />
                     </page>
-                </page>
+                </xpath>
             </field>
         </record>
    
