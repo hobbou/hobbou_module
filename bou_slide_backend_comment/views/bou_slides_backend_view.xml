@@ -74,11 +74,11 @@
             <field name="model">slide.slide</field>
             <field name="inherit_id" ref="website_slides.view_slide_slide_form" />
             <field name="arch" type="xml">
-                <page string="Website" position="after">
+                <xpath expr="/form/sheet/notebook/page/field[@name='index_content']/.." position="after">
                     <page string="Commentaires">
                         <field name="fal_comment_ids" />
                     </page>
-                </page>
+                </xpath>
             </field>
         </record>
 
@@ -88,11 +88,11 @@
             <field name="model">res.users</field>
             <field name="inherit_id" ref="bou_slide_backend_ext.view_res_users_form_bouslidebackendext" />
             <field name="arch" type="xml">
-                <page string="Member in Channel" position="after">
+                <xpath expr="/form/sheet/notebook/page/field[@name='bou_member_in_channel_ids']/.." position="after">
                     <page string="Comment Send">
                         <field name="fal_comment_send_ids" />
                     </page>
-                </page>
+                </xpath>
             </field>
         </record>
         
@@ -102,11 +102,11 @@
             <field name="model">slide.channel</field>
             <field name="inherit_id" ref="website_slides.view_slide_channel_form" />
             <field name="arch" type="xml">
-                <page string="General" position="after">
+                <xpath expr="/form/sheet/notebook/page/group/group/field[@name='promote_strategy']/../../.." position="after">
                     <page string="Commentaires">
                         <field name="fal_comment_ids" />
                     </page>
-                </page>
+                </xpath>
             </field>
         </record>
         
