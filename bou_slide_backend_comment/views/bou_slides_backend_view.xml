@@ -117,7 +117,7 @@
             <field name="view_mode">tree,form</field>
         </record>
         
-        <menuitem action="action_ir_bou_comment_bouslidebackendcomment" id="menu_action_bou_comment_bouslidebackendcomment" parent="website_slides.menu_slides" sequence="99"/>
+        <menuitem action="action_ir_bou_comment_bouslidebackendcomment" id="menu_action_bou_comment_bouslidebackendcomment" parent="website_slides.menu_website_slides_root" sequence="99"/>
     
     </data>
 </openerp>

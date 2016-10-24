@@ -241,8 +241,8 @@
             <field name="view_id" ref="view_bou_channel_post_tree_bouslidebackendtimeline"/>
         </record>
         
-        <menuitem action="action_ir_bou_channel_post_bouslidebackendtimeline" id="menu_action_ir_bou_channel_post_bouslidebackendtimeline" parent="website_slides.menu_slides" sequence="9"/>
-        <menuitem action="action_ir_bou_playlist_bouslidebackendtimeline" id="menu_action_ir_bou_playlist_bouslidebackendtimeline" parent="website_slides.menu_slides" sequence="9"/>
+        <menuitem action="action_ir_bou_channel_post_bouslidebackendtimeline" id="menu_action_ir_bou_channel_post_bouslidebackendtimeline" parent="website_slides.menu_website_slides_root" sequence="9"/>
+        <menuitem action="action_ir_bou_playlist_bouslidebackendtimeline" id="menu_action_ir_bou_playlist_bouslidebackendtimeline" parent="website_slides.menu_website_slides_root" sequence="9"/>
         
     </data>
 </openerp>

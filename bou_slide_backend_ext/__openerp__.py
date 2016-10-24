@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "HowBou Slide Backend Extention",
+    "name": "Hobbou Slide Backend Extention",
     "version": "1.0",
-    'author': 'HowBou',
+    'author': 'Hobbou',
     "description": """
     Module to modify, extends, and improve the website_slide module.
     """,

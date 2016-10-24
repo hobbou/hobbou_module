@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "HowBou Slide Backend Comment",
+    "name": "Hobbou Slide Backend Comment",
     "version": "1.0",
-    'author': 'HowBou',
+    'author': 'Hobbou',
     "description": """
     Comment backend for the content.
     """,

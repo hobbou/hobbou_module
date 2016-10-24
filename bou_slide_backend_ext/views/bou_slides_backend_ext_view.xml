@@ -80,14 +80,14 @@
                 <field name="group_ids" position="after">
                     <field name="active" />
                 </field>
-                <page string="General" position="after">
-                    <page string="Slides">
+                <xpath expr="/form/sheet/notebook/page/group/group/field[@name='promote_strategy']/../../.." position="after">
+                    <page string="Slides"> 
                         <field name="slide_ids" />
-                    </page>
+                     </page>
                     <page string="Team Member">
                         <field name="bou_team_member_ids" />
                     </page>
-                </page>
+                </xpath>
             </field>
         </record>
         
@@ -145,7 +145,7 @@
         </record>
 
         <record id="action_ir_slide_category_bouslidebackendext" model="ir.actions.act_window">
-            <field name="name">HowBou Categories</field>
+            <field name="name">Hobbou Categories</field>
             <field name="res_model">bou.slide.category</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -171,8 +171,8 @@
             <field name="act_window_id" ref="action_ir_res_users_bouslidebackendext"/>
         </record>
         
-        <menuitem action="action_ir_slide_category_bouslidebackendext" id="menu_action_ir_bou_slide_category" parent="website_slides.menu_slides" sequence="2"/>
-        <menuitem action="action_ir_res_users_bouslidebackendext" id="menu_action_ir_res_users" parent="website_slides.menu_slides" sequence="99"/>
+        <menuitem action="action_ir_slide_category_bouslidebackendext" id="menu_action_ir_bou_slide_category" parent="website_slides.menu_website_slides_root" sequence="2"/>
+        <menuitem action="action_ir_res_users_bouslidebackendext" id="menu_action_ir_res_users" parent="website_slides.menu_website_slides_root" sequence="99"/>
         
     </data>
 </openerp>

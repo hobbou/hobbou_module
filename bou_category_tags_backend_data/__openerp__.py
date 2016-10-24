@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "HowBou Categories and Tags Initial Data",
+    "name": "Hobbou Categories and Tags Initial Data",
     "version": "1.0",
-    'author': 'HowBou',
+    'author': 'Hobbou',
     "description": """
     Module to define categories and tags initial data.
     """,
     "depends" : ['website_slides', 'bou_slide_backend_ext'],
     'init_xml': [],
     'data': [
-        'data/howbou_category_tags.xml',
+        'data/hobbou_category_tags.xml',
     ],
     'css': [],
     'js' : [],

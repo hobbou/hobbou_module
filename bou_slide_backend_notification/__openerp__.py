@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "HowBou Slide Backend Notification",
+    "name": "Hobbou Slide Backend Notification",
     "version": "1.0",
-    'author': 'HowBou',
+    'author': 'Hobbou',
     "description": """
     Timeline backend for user activity.
     """,

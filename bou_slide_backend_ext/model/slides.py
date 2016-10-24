@@ -35,7 +35,7 @@ class Channel(models.Model):
 class BouSlideCategory(models.Model):
 #we create a new class of category because the current class not fit our requirement
     _name = 'bou.slide.category'
-    _description = "HowBou Slides Category"
+    _description = "Hobbou Slides Category"
     _order = "sequence, id"
     
     active = fields.Boolean(string="Active", default=True)
