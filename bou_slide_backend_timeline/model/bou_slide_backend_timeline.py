@@ -4,6 +4,7 @@ import openerp
 from openerp import api, fields, models
 from openerp.tools.safe_eval import safe_eval as eval
 from openerp.tools.translate import _
+from openerp.exceptions import ValidationError
 
 class BouChannelPost(models.Model):
     _name = 'bou.channel.post'
@@ -27,4 +28,5 @@ class BouChannelPost(models.Model):
     playlist_id = fields.Many2one('bou.playlist', 'Playlist')
     description = fields.Text('Description')
     
+
 #end of BouChannelPost()

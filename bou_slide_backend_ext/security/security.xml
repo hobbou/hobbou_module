@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="group_hbuser" model="res.groups">
+            <field name="name">Hobbou - User</field>
+        </record>
+    </data>
+</odoo>

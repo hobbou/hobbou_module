@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import openerp
+import base64
 from openerp import api, fields, models
 from openerp.tools.safe_eval import safe_eval as eval
 from openerp.tools.translate import _
+from openerp.tools import config
 from openerp.exceptions import ValidationError
+from openerp.addons.goldwords.tinytag import TinyTagException, TinyTag, ID3, Ogg, Wave, Flac
 
 class Channel(models.Model):
     _inherit = 'slide.channel'
@@ -98,6 +101,11 @@ class Slide(models.Model):
     active = fields.Boolean(string="Active", default=True)
     bou_slide_category_id = fields.Many2one(related='channel_id.bou_slide_category_id', comodel_name='bou.slide.category', string="Category", store=True, readonly=True)
     tag_ids = fields.Many2many(string="Sections", domain="[('bou_category_ids', '=', bou_slide_category_id)]", required=True)
+    
+    file = fields.Binary(string='File', attachment=True, track_visibility='on_change')    
+    filename = fields.Char('Filename', track_visibility='on_change')
+
+    url = fields.Char('Document URL', help="Youtube or Google Document URL",required=False)
 
     @api.onchange('channel_id')
     def _onchange_bou_channel(self):
@@ -109,6 +117,30 @@ class Slide(models.Model):
             if slide_id.name:              
                 if len(slide_id.name) <= 7:
                     raise ValidationError(_('Have a longer title will not hurt bro..'))
+
+    @api.constrains('file','filename')
+    def _check_file(self):
+
+        print "decoding file using base64 decoder.."
+        decoded_hdr = base64.b64decode(self.file)
+
+        print "checking file extension.."
+        if self.filename.lower().endswith(('.wav', '.mp3', '.m4a')):
+            audio_ext = self.filename[-4:]
+            print audio_ext,"file is found"
+            audio_file = open(config['data_dir']+"\\temp"+audio_ext, "w")
+            audio_file.write(decoded_hdr)
+            audio_file.close()
+
+            tag = TinyTag.get(config['data_dir']+"\\temp"+audio_ext)
+            print "This track is by",tag.artist
+            print"It is",tag.duration,"seconds long"
+            
+            duration = tag.duration
+            if duration > 437:
+                raise ValidationError("Audio duration is too long. Expected below 7 minutes and 17 seconds")
+        else:
+            raise ValidationError("Format is not valid. Expected audio file")
     
 #end of Slide()
 

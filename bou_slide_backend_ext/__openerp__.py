@@ -9,6 +9,7 @@
     "depends" : ['website_slides'],
     'init_xml': [],
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/bou_slides_backend_ext_view.xml',
     ],

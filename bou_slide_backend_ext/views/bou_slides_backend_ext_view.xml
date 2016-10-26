@@ -101,6 +101,10 @@
                 <field name="category_id" position="after">
                     <field name="bou_slide_category_id" />
                 </field>
+                <field name="url" position="replace">
+                    <field name="file" filename="filename"/>
+                    <field name="filename" invisible="1"/>
+                </field>
                 <field name="datas" position="after">
                     <field name="active" />
                 </field>
