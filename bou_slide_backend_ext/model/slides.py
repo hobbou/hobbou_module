@@ -102,22 +102,15 @@ class Slide(models.Model):
     bou_slide_category_id = fields.Many2one(related='channel_id.bou_slide_category_id', comodel_name='bou.slide.category', string="Category", store=True, readonly=True)
     tag_ids = fields.Many2many(string="Sections", domain="[('bou_category_ids', '=', bou_slide_category_id)]", required=True)
     # content
-    slide_type = fields.Selection([
-        ('infographic', 'Infographic'),
-        ('presentation', 'Presentation'),
-        ('document', 'Document'),
-        ('video', 'Video'),
-        ('audio', 'Audio')],
-        string='Type', required=True,
-        default='audio',
-        help="The document type will be set automatically based on the document URL and properties (e.g. height and width for presentation and document).")
+    slide_type = fields.Selection(selection_add=[
+        ('story', 'Story'),
+        ('image', 'Image'),
+        ('audio', 'Audio')]
+        )
     
     file = fields.Binary(string='File', attachment=True, track_visibility='on_change')    
     filename = fields.Char('Filename', track_visibility='on_change')
     mime_type = fields.Char('Mime-type', readonly=True, compute='_get_mime_type')
-
-    url = fields.Char('Document URL', help="Youtube or Google Document URL",required=False)
-    embed_code = fields.Text('Embed Code', readonly=True, compute='_get_embed_code')
 
     def _get_mime_type(self):
         if self.filename.lower().endswith('mp3'):
@@ -164,7 +157,7 @@ class Slide(models.Model):
 
         print "checking file extension.."
         if self.filename.lower().endswith(('.wav', '.mp3', '.m4a')):
-
+            self.slide_type = 'audio'
             audio_ext = self.filename[-4:]
             print audio_ext,"file is found"
             audio_file = open(config['data_dir']+"\\temp"+audio_ext, "w")
