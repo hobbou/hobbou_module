@@ -101,12 +101,50 @@ class Slide(models.Model):
     active = fields.Boolean(string="Active", default=True)
     bou_slide_category_id = fields.Many2one(related='channel_id.bou_slide_category_id', comodel_name='bou.slide.category', string="Category", store=True, readonly=True)
     tag_ids = fields.Many2many(string="Sections", domain="[('bou_category_ids', '=', bou_slide_category_id)]", required=True)
+    # content
+    slide_type = fields.Selection([
+        ('infographic', 'Infographic'),
+        ('presentation', 'Presentation'),
+        ('document', 'Document'),
+        ('video', 'Video'),
+        ('audio', 'Audio')],
+        string='Type', required=True,
+        default='audio',
+        help="The document type will be set automatically based on the document URL and properties (e.g. height and width for presentation and document).")
     
     file = fields.Binary(string='File', attachment=True, track_visibility='on_change')    
     filename = fields.Char('Filename', track_visibility='on_change')
+    mime_type = fields.Char('Mime-type', readonly=True, compute='_get_mime_type')
 
     url = fields.Char('Document URL', help="Youtube or Google Document URL",required=False)
+    embed_code = fields.Text('Embed Code', readonly=True, compute='_get_embed_code')
 
+    def _get_mime_type(self):
+        if self.filename.lower().endswith('mp3'):
+            self.mime_type = 'mpeg'
+        elif self.filename.lower().endswith('wav'):
+            self.mime_type = 'wav'
+        elif self.filename.lower().endswith('ogg'):
+            self.mime_type = 'ogg'
+        else:
+            self.mime_type = None
+
+    def _get_embed_code(self):
+        base_url = self.env['ir.config_parameter'].get_param('web.base.url')
+        for record in self:
+            if record.datas and (not record.document_id or record.slide_type in ['document', 'presentation']):
+                record.embed_code = '<iframe src="%s/slides/embed/%s?page=1" allowFullScreen="true" height="%s" width="%s" frameborder="0"></iframe>' % (base_url, record.id, 315, 420)
+            elif record.slide_type == 'video' and record.document_id:
+                if not record.mime_type:
+                    # embed youtube video
+                    record.embed_code = '<iframe src="//www.youtube.com/embed/%s?theme=light" allowFullScreen="true" frameborder="0"></iframe>' % (record.document_id)
+                else:
+                    # embed google doc video
+                    record.embed_code = '<embed src="https://video.google.com/get_player?ps=docs&partnerid=30&docid=%s" type="application/x-shockwave-flash"></embed>' % (record.document_id)
+            elif record.slide_type == 'audio':
+                record.embed_code = '<audio controls src="data:audio/%s;base64,%s" />' % (self.mime_type, self.file)
+            else:
+                record.embed_code = False
     @api.onchange('channel_id')
     def _onchange_bou_channel(self):
         self.tag_ids = self.channel_id.bou_slide_section_ids
@@ -126,6 +164,7 @@ class Slide(models.Model):
 
         print "checking file extension.."
         if self.filename.lower().endswith(('.wav', '.mp3', '.m4a')):
+
             audio_ext = self.filename[-4:]
             print audio_ext,"file is found"
             audio_file = open(config['data_dir']+"\\temp"+audio_ext, "w")

@@ -90,8 +90,14 @@
                 </xpath>
             </field>
         </record>
-        
-
+        <!-- Override slide_detail_view -->
+        <template id="override_slide_detail_view" inherit_id="website_slides.slide_detail_view">
+            <xpath expr="//div[@class='embed-responsive embed-responsive-4by3 embed-responsive-item mb8']" position="after">
+                <div t-if="slide.slide_type == 'audio'" class="embed-responsive embed-responsive-16by9 embed-responsive-item mb8">
+                    <t t-raw="slide.embed_code"/>
+                </div>
+            </xpath>
+        </template>
         <!-- SLIDE.SLIDE -->
         <record id="view_slide_slide_form_bouslidebackendext" model="ir.ui.view">
             <field name="name">slide.slide.form.bouslidebackendext</field>
@@ -104,6 +110,7 @@
                 <field name="url" position="replace">
                     <field name="file" filename="filename"/>
                     <field name="filename" invisible="1"/>
+                    <field name="image"/>
                 </field>
                 <field name="datas" position="after">
                     <field name="active" />
