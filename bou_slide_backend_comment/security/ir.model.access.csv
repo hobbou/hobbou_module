@@ -2,4 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_bou_comment_public,bou.user.comment.public,model_bou_comment,base.group_public,1,0,0,0
 access_bou_comment_portal,bou.user.comment.portal,model_bou_comment,base.group_portal,1,0,0,0
 access_bou_comment_user,bou.user.comment.user,model_bou_comment,base.group_user,1,1,1,1
-access_bou_comment_hbuser,bou.user.comment.hbuser,model_bou_comment,bou_slide_backend_ext.group_hbuser,1,1,1,1
+access_bou_comment_bou_user,bou.user.comment.bou_user,model_bou_comment,bou_slide_backend_ext.group_bou_user,1,1,1,1

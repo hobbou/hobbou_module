@@ -7,7 +7,7 @@ from openerp.tools.safe_eval import safe_eval as eval
 from openerp.tools.translate import _
 from openerp.tools import config
 from openerp.exceptions import ValidationError
-from openerp.addons.goldwords.tinytag import TinyTagException, TinyTag, ID3, Ogg, Wave, Flac
+from openerp.addons.bou_slide_backend_ext.tinytag import TinyTagException, TinyTag, ID3, Ogg, Wave, Flac
 
 class Channel(models.Model):
     _inherit = 'slide.channel'
@@ -171,8 +171,14 @@ class Slide(models.Model):
             duration = tag.duration
             if duration > 437:
                 raise ValidationError("Audio duration is too long. Expected below 7 minutes and 17 seconds")
+        elif self.filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp', '.tif', '.tiff')):
+            self.slide_type = 'image'
+        elif self.filename.lower().endswith(('.pdf', '.txt', '.doc', '.docx', '.odt')):
+            self.slide_type = 'story'
+        elif self.filename.lower().endswith(('.ppt', '.pptx', '.odp')):
+            self.slide_type = 'presentation'
         else:
-            raise ValidationError("Format is not valid. Expected audio file")
+            raise ValidationError("Format is not valid.")
     
 #end of Slide()
 
