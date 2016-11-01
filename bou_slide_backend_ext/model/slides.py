@@ -8,6 +8,10 @@ from openerp.tools.translate import _
 from openerp.tools import config
 from openerp.exceptions import ValidationError
 from openerp.addons.bou_slide_backend_ext.tinytag import TinyTagException, TinyTag, ID3, Ogg, Wave, Flac
+from openerp.addons.bou_slide_backend_ext.hachoir_metadata import metadata
+from openerp.addons.bou_slide_backend_ext.hachoir_parser.guess import createParser
+from datetime import timedelta
+
 
 class Channel(models.Model):
     _inherit = 'slide.channel'
@@ -107,6 +111,7 @@ class Slide(models.Model):
         ('image', 'Image'),
         ('audio', 'Audio')]
         )
+
     
     file = fields.Binary(string='File', attachment=True, track_visibility='on_change')    
     filename = fields.Char('Filename', track_visibility='on_change')
@@ -127,13 +132,17 @@ class Slide(models.Model):
         for record in self:
             if record.datas and (not record.document_id or record.slide_type in ['document', 'presentation']):
                 record.embed_code = '<iframe src="%s/slides/embed/%s?page=1" allowFullScreen="true" height="%s" width="%s" frameborder="0"></iframe>' % (base_url, record.id, 315, 420)
-            elif record.slide_type == 'video' and record.document_id:
-                if not record.mime_type:
-                    # embed youtube video
-                    record.embed_code = '<iframe src="//www.youtube.com/embed/%s?theme=light" allowFullScreen="true" frameborder="0"></iframe>' % (record.document_id)
+            elif record.slide_type == 'video':
+                # if video is on youtube/google
+                if record.document_id:
+                    if not record.mime_type:
+                        # embed youtube video
+                        record.embed_code = '<iframe src="//www.youtube.com/embed/%s?theme=light" allowFullScreen="true" frameborder="0"></iframe>' % (record.document_id)
+                    else:
+                        # embed google doc video
+                        record.embed_code = '<embed src="https://video.google.com/get_player?ps=docs&partnerid=30&docid=%s" type="application/x-shockwave-flash"></embed>' % (record.document_id)
                 else:
-                    # embed google doc video
-                    record.embed_code = '<embed src="https://video.google.com/get_player?ps=docs&partnerid=30&docid=%s" type="application/x-shockwave-flash"></embed>' % (record.document_id)
+                    record.embed_code = '<video controls><source src="data:video/%s;base64,%s" ></video>' % (self.mime_type, self.file)
             elif record.slide_type == 'audio':
                 record.embed_code = '<audio controls src="data:audio/%s;base64,%s" />' % (self.mime_type, self.file)
             else:
@@ -175,6 +184,24 @@ class Slide(models.Model):
             self.slide_type = 'image'
         elif self.filename.lower().endswith(('.pdf', '.txt', '.doc', '.docx', '.odt')):
             self.slide_type = 'story'
+        elif self.filename.lower().endswith(('.mp4', '.mov', '.mpeg4', '.avi', '.wmv', '.flv')):
+            self.slide_type = 'video'
+            video_ext = self.filename[-4:].lower()
+            if self.filename.lower().endswith('.mpeg4'):
+                video_ext = self.filename[-6:].lower()
+            print video_ext,"file is found"
+
+            with open(config['data_dir']+"\\temp"+video_ext, "wb") as fh:
+                fh.write(self.file.decode('base64'))
+
+            parser = createParser(config['data_dir']+"\\temp"+video_ext)
+            metalist = metadata.extractMetadata(parser)
+            duration = metalist.get('duration').total_seconds()
+            print "duration :",duration
+
+            if duration > 437:
+                raise ValidationError("Video duration is too long. Expected below 7 minutes and 17 seconds")
+
         elif self.filename.lower().endswith(('.ppt', '.pptx', '.odp')):
             self.slide_type = 'presentation'
         else:
