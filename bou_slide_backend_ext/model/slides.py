@@ -162,14 +162,12 @@ class Slide(models.Model):
     def _check_file(self):
 
         allowed_audio = ('.wav', '.mp3', '.m4a')
-        allowed_video = ('.mp4', '.mov', '.mpeg4', '.avi', '.wmv', '.flv')
+        allowed_video = ('.mp4', '.mov', '.avi', '.wmv', '.flv')
 
         #writing to temp file
         file_ext = self.filename[-4:].lower()
         if self.filename.lower().endswith(('.jpeg','.webp','.tiff','.docx','.pptx')):
                 file_ext = self.filename[-5:].lower()
-        if self.filename.lower().endswith('.mpeg4'):
-                file_ext = self.filename[-6:].lower()
 
         print file_ext,"file is found"
         with open(config['data_dir']+"\\temp"+file_ext, "wb") as fh:
