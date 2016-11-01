@@ -193,7 +193,9 @@ class Slide(models.Model):
             parser = createParser(config['data_dir']+"\\temp"+file_ext)
             metalist = metadata.extractMetadata(parser)
             duration = metalist.get('duration').total_seconds()
-            # print "duration :",duration
+            if file_ext == '.wmv':
+                duration -= 3
+            print "duration :",duration
 
             if duration > 437:
                 raise ValidationError(_("Video duration is too long. Expected below 7 minutes and 17 seconds"))
