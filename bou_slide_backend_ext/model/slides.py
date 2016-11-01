@@ -162,15 +162,13 @@ class Slide(models.Model):
     def _check_file(self):
 
         allowed_audio = ('.wav', '.mp3', '.m4a')
-        allowed_video = ('.mp4', '.mov', '.mpeg4', '.avi', '.wmv', '.flv')
+        allowed_video = ('.mp4', '.mov', '.avi', '.wmv', '.flv')
 
         #writing to temp file
         file_ext = self.filename[-4:].lower()
         if self.filename.lower().endswith(('.jpeg','.webp','.tiff','.docx','.pptx')):
                 file_ext = self.filename[-5:].lower()
-        if self.filename.lower().endswith('.mpeg4'):
-                file_ext = self.filename[-6:].lower()
-                
+
         print file_ext,"file is found"
         with open(config['data_dir']+"\\temp"+file_ext, "wb") as fh:
             fh.write(self.file.decode('base64'))
@@ -184,7 +182,7 @@ class Slide(models.Model):
             
             duration = tag.duration
             if duration > 437:
-                raise ValidationError("Audio duration is too long. Expected below 7 minutes and 17 seconds")
+                raise ValidationError(_("Audio duration is too long. Expected below 7 minutes and 17 seconds"))
         elif file_ext in ('.png', '.jpg', '.jpeg', '.gif', '.webp', '.tif', '.tiff'):
             self.slide_type = 'image'
         elif  file_ext in ('.pdf', '.txt', '.doc', '.docx', '.odt'):
