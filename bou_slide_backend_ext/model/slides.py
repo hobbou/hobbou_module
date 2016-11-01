@@ -169,7 +169,7 @@ class Slide(models.Model):
         if self.filename.lower().endswith(('.jpeg','.webp','.tiff','.docx','.pptx')):
                 file_ext = self.filename[-5:].lower()
 
-        print file_ext,"file is found"
+        # print file_ext,"file is found"
         with open(config['data_dir']+"\\temp"+file_ext, "wb") as fh:
             fh.write(self.file.decode('base64'))
 
@@ -177,8 +177,8 @@ class Slide(models.Model):
             self.slide_type = 'audio'
 
             tag = TinyTag.get(config['data_dir']+"\\temp"+file_ext)
-            print "This track is by",tag.artist
-            print"It is",tag.duration,"seconds long"
+            # print "This track is by",tag.artist
+            # print"It is",tag.duration,"seconds long"
             
             duration = tag.duration
             if duration > 437:
@@ -193,7 +193,7 @@ class Slide(models.Model):
             parser = createParser(config['data_dir']+"\\temp"+file_ext)
             metalist = metadata.extractMetadata(parser)
             duration = metalist.get('duration').total_seconds()
-            print "duration :",duration
+            # print "duration :",duration
 
             if duration > 437:
                 raise ValidationError(_("Video duration is too long. Expected below 7 minutes and 17 seconds"))
