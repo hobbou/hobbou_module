@@ -161,40 +161,38 @@ class Slide(models.Model):
     @api.constrains('file','filename')
     def _check_file(self):
 
-        print "decoding file using base64 decoder.."
-        decoded_hdr = base64.b64decode(self.file)
+        allowed_audio = ('.wav', '.mp3', '.m4a')
+        allowed_video = ('.mp4', '.mov', '.mpeg4', '.avi', '.wmv', '.flv')
 
-        print "checking file extension.."
-        if self.filename.lower().endswith(('.wav', '.mp3', '.m4a')):
+        #writing to temp file
+        file_ext = self.filename[-4:].lower()
+        if self.filename.lower().endswith(('.jpeg','.webp','.tiff','.docx','.pptx')):
+                file_ext = self.filename[-5:].lower()
+        if self.filename.lower().endswith('.mpeg4'):
+                file_ext = self.filename[-6:].lower()
+                
+        print file_ext,"file is found"
+        with open(config['data_dir']+"\\temp"+file_ext, "wb") as fh:
+            fh.write(self.file.decode('base64'))
+
+        if file_ext in allowed_audio:
             self.slide_type = 'audio'
-            audio_ext = self.filename[-4:]
-            print audio_ext,"file is found"
-            audio_file = open(config['data_dir']+"\\temp"+audio_ext, "w")
-            audio_file.write(decoded_hdr)
-            audio_file.close()
 
-            tag = TinyTag.get(config['data_dir']+"\\temp"+audio_ext)
+            tag = TinyTag.get(config['data_dir']+"\\temp"+file_ext)
             print "This track is by",tag.artist
             print"It is",tag.duration,"seconds long"
             
             duration = tag.duration
             if duration > 437:
                 raise ValidationError("Audio duration is too long. Expected below 7 minutes and 17 seconds")
-        elif self.filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp', '.tif', '.tiff')):
+        elif file_ext in ('.png', '.jpg', '.jpeg', '.gif', '.webp', '.tif', '.tiff'):
             self.slide_type = 'image'
-        elif self.filename.lower().endswith(('.pdf', '.txt', '.doc', '.docx', '.odt')):
+        elif  file_ext in ('.pdf', '.txt', '.doc', '.docx', '.odt'):
             self.slide_type = 'story'
-        elif self.filename.lower().endswith(('.mp4', '.mov', '.mpeg4', '.avi', '.wmv', '.flv')):
+        elif  file_ext in allowed_video:
             self.slide_type = 'video'
-            video_ext = self.filename[-4:].lower()
-            if self.filename.lower().endswith('.mpeg4'):
-                video_ext = self.filename[-6:].lower()
-            print video_ext,"file is found"
 
-            with open(config['data_dir']+"\\temp"+video_ext, "wb") as fh:
-                fh.write(self.file.decode('base64'))
-
-            parser = createParser(config['data_dir']+"\\temp"+video_ext)
+            parser = createParser(config['data_dir']+"\\temp"+file_ext)
             metalist = metadata.extractMetadata(parser)
             duration = metalist.get('duration').total_seconds()
             print "duration :",duration
@@ -202,7 +200,7 @@ class Slide(models.Model):
             if duration > 437:
                 raise ValidationError("Video duration is too long. Expected below 7 minutes and 17 seconds")
 
-        elif self.filename.lower().endswith(('.ppt', '.pptx', '.odp')):
+        elif  file_ext in ('.ppt', '.pptx', '.odp'):
             self.slide_type = 'presentation'
         else:
             raise ValidationError("Format is not valid.")
