@@ -198,12 +198,12 @@ class Slide(models.Model):
             print "duration :",duration
 
             if duration > 437:
-                raise ValidationError("Video duration is too long. Expected below 7 minutes and 17 seconds")
+                raise ValidationError(_("Video duration is too long. Expected below 7 minutes and 17 seconds"))
 
         elif  file_ext in ('.ppt', '.pptx', '.odp'):
             self.slide_type = 'presentation'
         else:
-            raise ValidationError("Format is not valid.")
+            raise ValidationError(_("Format is not valid."))
     
 #end of Slide()
 
