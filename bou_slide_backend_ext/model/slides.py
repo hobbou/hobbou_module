@@ -113,7 +113,7 @@ class Slide(models.Model):
         )
 
     
-    file = fields.Binary(string='File', attachment=True, track_visibility='on_change')    
+    datas = fields.Binary('Content', attachment=True, track_visibility='on_change')    
     filename = fields.Char('Filename', track_visibility='on_change')
     mime_type = fields.Char('Mime-type', readonly=True, compute='_get_mime_type')
 
@@ -142,9 +142,9 @@ class Slide(models.Model):
                         # embed google doc video
                         record.embed_code = '<embed src="https://video.google.com/get_player?ps=docs&partnerid=30&docid=%s" type="application/x-shockwave-flash"></embed>' % (record.document_id)
                 else:
-                    record.embed_code = '<video controls><source src="data:video/%s;base64,%s" ></video>' % (self.mime_type, self.file)
+                    record.embed_code = '<video controls><source src="data:video/%s;base64,%s" ></video>' % (self.mime_type, self.datas)
             elif record.slide_type == 'audio':
-                record.embed_code = '<audio controls src="data:audio/%s;base64,%s" />' % (self.mime_type, self.file)
+                record.embed_code = '<audio controls src="data:audio/%s;base64,%s" />' % (self.mime_type, self.datas)
             else:
                 record.embed_code = False
     @api.onchange('channel_id')
@@ -158,7 +158,7 @@ class Slide(models.Model):
                 if len(slide_id.name) <= 7:
                     raise ValidationError(_('Have a longer title will not hurt bro..'))
 
-    @api.constrains('file','filename')
+    @api.constrains('datas','filename')
     def _check_file(self):
 
         allowed_audio = ('.wav', '.mp3', '.m4a')
@@ -171,7 +171,7 @@ class Slide(models.Model):
 
         # print file_ext,"file is found"
         with open(config['data_dir']+"\\temp"+file_ext, "wb") as fh:
-            fh.write(self.file.decode('base64'))
+            fh.write(self.datas.decode('base64'))
 
         if file_ext in allowed_audio:
             self.slide_type = 'audio'
@@ -195,7 +195,6 @@ class Slide(models.Model):
             duration = metalist.get('duration').total_seconds()
             if file_ext == '.wmv':
                 duration -= 3
-            print "duration :",duration
 
             if duration > 437:
                 raise ValidationError(_("Video duration is too long. Expected below 7 minutes and 17 seconds"))

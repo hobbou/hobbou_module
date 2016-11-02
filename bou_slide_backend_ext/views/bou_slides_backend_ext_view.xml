@@ -113,12 +113,13 @@
                     <field name="bou_slide_category_id" />
                 </field>
                 <field name="url" position="replace">
-                    <field name="file" filename="filename"/>
-                    <field name="filename" invisible="1"/>
-                    <field name="image"/>
+                    <field name="url" />
+                    <field name="image" />
                 </field>
-                <field name="datas" position="after">
-                    <field name="active" />
+                <field name="datas" position="replace">
+                    <field name="datas" filename="filename"/>
+                    <field name="filename" invisible="1"/>
+                    <field name="active" invisible="1"/>
                 </field>
             </field>
         </record>
