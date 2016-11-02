@@ -102,7 +102,7 @@ class Slide(models.Model):
     _inherit = 'slide.slide'   
                     
     name = fields.Char(size=77)
-    active = fields.Boolean(string="Active", default=True)
+    active = fields.Boolean(string="Active")
     bou_slide_category_id = fields.Many2one(related='channel_id.bou_slide_category_id', comodel_name='bou.slide.category', string="Category", store=True, readonly=True)
     tag_ids = fields.Many2many(string="Sections", domain="[('bou_category_ids', '=', bou_slide_category_id)]", required=True)
     # content
@@ -113,9 +113,9 @@ class Slide(models.Model):
         )
 
     
-    datas = fields.Binary('Content', attachment=True, track_visibility='on_change')    
+    datas = fields.Binary(track_visibility='on_change')    
     filename = fields.Char('Filename', track_visibility='on_change')
-    mime_type = fields.Char('Mime-type', readonly=True, compute='_get_mime_type')
+    mime_type = fields.Char(readonly=True, compute='_get_mime_type')
 
     def _get_mime_type(self):
         if self.filename.lower().endswith('mp3'):
