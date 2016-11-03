@@ -11,7 +11,8 @@ from openerp.addons.bou_slide_backend_ext.tinytag import TinyTagException, TinyT
 from openerp.addons.bou_slide_backend_ext.hachoir_metadata import metadata
 from openerp.addons.bou_slide_backend_ext.hachoir_parser.guess import createParser
 from datetime import timedelta
-
+from subprocess import check_output
+# from openerp.addons.bou_slide_backend_ext.ffmpy import *
 
 class Channel(models.Model):
     _inherit = 'slide.channel'
@@ -116,6 +117,8 @@ class Slide(models.Model):
     datas = fields.Binary(track_visibility='on_change')    
     filename = fields.Char('Filename', track_visibility='on_change')
     mime_type = fields.Char(readonly=True, compute='_get_mime_type')
+    image = fields.Binary(filename="imgthumb.jpg")
+
 
     def _get_mime_type(self):
         if self.filename.lower().endswith('mp3'):
@@ -195,6 +198,12 @@ class Slide(models.Model):
             duration = metalist.get('duration').total_seconds()
             if file_ext == '.wmv':
                 duration -= 3
+            if not self.image:
+
+                check_output('ffmpeg -y -ss 00:00:01  -i '+"\""+config['data_dir']+"\""+"\\temp"+file_ext+' -vcodec mjpeg -vframes 1 -an -f rawvideo -s 320x240 '+"\""+config['data_dir']+"\""+"\\temp.jpg", shell=True)
+                
+                with open(config['data_dir']+"\\temp.jpg", "rb") as image:
+                    self.image = base64.b64encode(image.read())
 
             if duration > 437:
                 raise ValidationError(_("Video duration is too long. Expected below 7 minutes and 17 seconds"))
