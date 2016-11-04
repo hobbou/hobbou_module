@@ -117,7 +117,7 @@ class Slide(models.Model):
     datas = fields.Binary(track_visibility='on_change')    
     filename = fields.Char('Filename', track_visibility='on_change')
     mime_type = fields.Char(readonly=True, compute='_get_mime_type')
-    image = fields.Binary(filename="imgthumb.jpg")
+    image = fields.Binary("Thumbnail Image")
 
 
     def _get_mime_type(self):
@@ -200,7 +200,7 @@ class Slide(models.Model):
                 duration -= 3
             if not self.image:
 
-                check_output('ffmpeg -y -ss 00:00:01  -i '+"\""+config['data_dir']+"\""+"\\temp"+file_ext+' -vcodec mjpeg -vframes 1 -an -f rawvideo -s 320x240 '+"\""+config['data_dir']+"\""+"\\temp.jpg", shell=True)
+                check_output('ffmpeg -y -loglevel quiet -ss 00:00:01  -i '+"\""+config['data_dir']+"\""+"\\temp"+file_ext+' -vcodec mjpeg -vframes 1 -an -f rawvideo -s 320x240 '+"\""+config['data_dir']+"\""+"\\temp.jpg", shell=True)
                 
                 with open(config['data_dir']+"\\temp.jpg", "rb") as image:
                     self.image = base64.b64encode(image.read())

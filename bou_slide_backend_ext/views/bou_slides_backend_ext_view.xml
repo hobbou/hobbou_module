@@ -114,7 +114,7 @@
                 </field>
                 <field name="url" position="replace">
                     <field name="url" />
-                    <field name="image" />
+                    <field name="image"/>
                 </field>
                 <field name="datas" position="replace">
                     <field name="datas" filename="filename"/>
