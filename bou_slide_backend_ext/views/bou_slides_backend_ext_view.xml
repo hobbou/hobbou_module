@@ -117,8 +117,8 @@
                     <field name="image"/>
                 </field>
                 <field name="datas" position="replace">
-                    <field name="datas" filename="filename"/>
-                    <field name="filename" invisible="1"/>
+                    <field name="datas" filename="bou_filename"/>
+                    <field name="bou_filename" invisible="1"/>
                     <field name="active" invisible="1"/>
                 </field>
             </field>

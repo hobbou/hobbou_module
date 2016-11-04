@@ -115,17 +115,17 @@ class Slide(models.Model):
 
     
     datas = fields.Binary(track_visibility='on_change')    
-    filename = fields.Char('Filename', track_visibility='on_change')
+    bou_filename = fields.Char('Filename', track_visibility='on_change')
     mime_type = fields.Char(readonly=True, compute='_get_mime_type')
     image = fields.Binary("Thumbnail Image")
 
 
     def _get_mime_type(self):
-        if self.filename.lower().endswith('mp3'):
+        if self.bou_filename.lower().endswith('mp3'):
             self.mime_type = 'mpeg'
-        elif self.filename.lower().endswith('wav'):
+        elif self.bou_filename.lower().endswith('wav'):
             self.mime_type = 'wav'
-        elif self.filename.lower().endswith('ogg'):
+        elif self.bou_filename.lower().endswith('ogg'):
             self.mime_type = 'ogg'
         else:
             self.mime_type = None
@@ -133,7 +133,7 @@ class Slide(models.Model):
     def _get_embed_code(self):
         base_url = self.env['ir.config_parameter'].get_param('web.base.url')
         for record in self:
-            if record.datas and (not record.document_id or record.slide_type in ['document', 'presentation']):
+            if record.datas and (not record.document_id and record.slide_type in ['document', 'presentation']):
                 record.embed_code = '<iframe src="%s/slides/embed/%s?page=1" allowFullScreen="true" height="%s" width="%s" frameborder="0"></iframe>' % (base_url, record.id, 315, 420)
             elif record.slide_type == 'video':
                 # if video is on youtube/google
@@ -147,7 +147,7 @@ class Slide(models.Model):
                 else:
                     record.embed_code = '<video controls><source src="data:video/%s;base64,%s" ></video>' % (self.mime_type, self.datas)
             elif record.slide_type == 'audio':
-                record.embed_code = '<audio controls src="data:audio/%s;base64,%s" />' % (self.mime_type, self.datas)
+                record.embed_code = '<audio controls src="%s/web/content?model=slide.slide&field=datas&id=%s&filename_field=bou_filename" />' % (base_url, record.id)
             else:
                 record.embed_code = False
     @api.onchange('channel_id')
@@ -161,16 +161,16 @@ class Slide(models.Model):
                 if len(slide_id.name) <= 7:
                     raise ValidationError(_('Have a longer title will not hurt bro..'))
 
-    @api.constrains('datas','filename')
+    @api.constrains('datas','bou_filename')
     def _check_file(self):
 
         allowed_audio = ('.wav', '.mp3', '.m4a')
         allowed_video = ('.mp4', '.mov', '.avi', '.wmv', '.flv')
 
         #writing to temp file
-        file_ext = self.filename[-4:].lower()
-        if self.filename.lower().endswith(('.jpeg','.webp','.tiff','.docx','.pptx')):
-                file_ext = self.filename[-5:].lower()
+        file_ext = self.bou_filename[-4:].lower()
+        if self.bou_filename.lower().endswith(('.jpeg','.webp','.tiff','.docx','.pptx')):
+                file_ext = self.bou_filename[-5:].lower()
 
         # print file_ext,"file is found"
         with open(config['data_dir']+"\\temp"+file_ext, "wb") as fh:
