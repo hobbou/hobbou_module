@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import controllers
 import model
 import tinytag
 import hachoir_metadata

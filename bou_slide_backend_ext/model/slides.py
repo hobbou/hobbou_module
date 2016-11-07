@@ -145,7 +145,7 @@ class Slide(models.Model):
                         # embed google doc video
                         record.embed_code = '<embed src="https://video.google.com/get_player?ps=docs&partnerid=30&docid=%s" type="application/x-shockwave-flash"></embed>' % (record.document_id)
                 else:
-                    record.embed_code = '<video controls><source src="data:video/%s;base64,%s" ></video>' % (self.mime_type, self.datas)
+                    record.embed_code = '<video controls src="%s/web/content?model=slide.slide&field=datas&id=%s&filename_field=bou_filename" />' % (base_url, record.id)
             elif record.slide_type == 'audio':
                 record.embed_code = '<audio controls src="%s/web/content?model=slide.slide&field=datas&id=%s&filename_field=bou_filename" />' % (base_url, record.id)
             else:
