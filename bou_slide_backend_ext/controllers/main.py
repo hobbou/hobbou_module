@@ -11,7 +11,7 @@ class website_hobbou(http.Controller):
     @http.route(['/slide','/slide/order/<string:order>','/slide/tag/<string:tag>',
         '/slide/tag/<string:tag>/order/<string:order>','/slide/category/<string:category>',
         '/slide/category/<string:category>/order/<string:order>','/slide/type/<string:bou_type>',
-        '/slide/type/<string:bou_type>/order/<string:order>'], type='http', auth='user', website=True)
+        '/slide/type/<string:bou_type>/order/<string:order>'], type='http', auth='public', website=True)
     def get_slide(self, order=False,tag=False,category=False,bou_type=False):
         domain = []
         if bou_type:
@@ -35,7 +35,7 @@ class website_hobbou(http.Controller):
             slides = request.env['slide.slide'].search(domain,order='total_views desc')
         else:#newest
             slides = request.env['slide.slide'].search(domain,order='create_date desc')
-
+        print "slides :",slides
         slide_list = []
         if not len(slides):
             slide_list.append({
@@ -43,12 +43,12 @@ class website_hobbou(http.Controller):
             'error' : 'record not found'
             })
         for slide in slides:
-            tags = []
-            for tag in slide.tag_ids:
-                tags.append(tag.name)
+            # tags = []
+            # for tag in slide.tag_ids:
+            #     tags.append(tag.name)
             a_slide = {
             'type' : slide.slide_type,
-            'tag' : tags,
+            'tag' : [tag.name for tag in slide.tag_ids],
             'category' : slide.bou_slide_category_id.name,
             'name' : slide.name,
             'channel' : slide.channel_id.name,
@@ -60,7 +60,7 @@ class website_hobbou(http.Controller):
         return json.dumps(slide_list)
 
     # get suscribed content
-    @http.route('/subscribed', type='http', auth='user', website=True)
+    @http.route('/subscribed', type='http', auth='public', website=True)
     def get_subscribed_content(self):
         bou_chan_subs_lines = request.env['bou.channel.subscribed.line'].search([('user_id','=',request.env.user.id)])
         subs = []
