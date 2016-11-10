@@ -35,7 +35,7 @@ class website_hobbou(http.Controller):
             slides = request.env['slide.slide'].search(domain,order='total_views desc')
         else:#newest
             slides = request.env['slide.slide'].search(domain,order='create_date desc')
-        print "slides :",slides
+        # print "slides :",slides
         slide_list = []
         if not len(slides):
             slide_list.append({
