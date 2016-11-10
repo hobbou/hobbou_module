@@ -173,13 +173,13 @@ class Slide(models.Model):
                 file_ext = self.bou_filename[-5:].lower()
 
         # print file_ext,"file is found"
-        with open(config['data_dir']+"\\temp"+file_ext, "wb") as fh:
+        with open(config['data_dir']+"temp"+file_ext, "wb") as fh:
             fh.write(self.datas.decode('base64'))
 
         if file_ext in allowed_audio:
             self.slide_type = 'audio'
 
-            tag = TinyTag.get(config['data_dir']+"\\temp"+file_ext)
+            tag = TinyTag.get(config['data_dir']+"temp"+file_ext)
             # print "This track is by",tag.artist
             # print"It is",tag.duration,"seconds long"
             
@@ -193,16 +193,16 @@ class Slide(models.Model):
         elif  file_ext in allowed_video:
             self.slide_type = 'video'
 
-            parser = createParser(config['data_dir']+"\\temp"+file_ext)
+            parser = createParser(config['data_dir']+"temp"+file_ext)
             metalist = metadata.extractMetadata(parser)
             duration = metalist.get('duration').total_seconds()
             if file_ext == '.wmv':
                 duration -= 3
             if not self.image:
 
-                check_output('ffmpeg -y -loglevel quiet -ss 00:00:01  -i '+"\""+config['data_dir']+"\""+"\\temp"+file_ext+' -vcodec mjpeg -vframes 1 -an -f rawvideo -s 320x240 '+"\""+config['data_dir']+"\""+"\\temp.jpg", shell=True)
+                check_output('ffmpeg -y -loglevel quiet -ss 00:00:01  -i '+"\""+config['data_dir']+"\""+"temp"+file_ext+' -vcodec mjpeg -vframes 1 -an -f rawvideo -s 320x240 '+"\""+config['data_dir']+"\""+"temp.jpg", shell=True)
                 
-                with open(config['data_dir']+"\\temp.jpg", "rb") as image:
+                with open(config['data_dir']+"temp.jpg", "rb") as image:
                     self.image = base64.b64encode(image.read())
 
             if duration > 437:
