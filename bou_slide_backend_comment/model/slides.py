@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import openerp
-from openerp import api, fields, models
-from openerp.tools.safe_eval import safe_eval as eval
-from openerp.tools.translate import _
-from openerp.exceptions import ValidationError
+import odoo
+from odoo import api, fields, models
+from odoo.tools.safe_eval import safe_eval as eval
+from odoo.tools.translate import _
+from odoo.exceptions import ValidationError
 
 
 class Slide(models.Model): 
