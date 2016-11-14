@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import werkzeug
 import json
-from openerp.http import request
-from openerp import http
+from odoo.http import request
+from odoo import http
 import json
 
 class website_hobbou(http.Controller):
