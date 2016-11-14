@@ -187,9 +187,14 @@
             <field name="view_id" ref="view_res_users_form_bouslidebackendext"/>
             <field name="act_window_id" ref="action_ir_res_users_bouslidebackendext"/>
         </record>
-        
-        <menuitem action="action_ir_slide_category_bouslidebackendext" id="menu_action_ir_bou_slide_category" parent="website_slides.menu_website_slides_root" sequence="2"/>
-        <menuitem action="action_ir_res_users_bouslidebackendext" id="menu_action_ir_res_users" parent="website_slides.menu_website_slides_root" sequence="99"/>
-        
+
+        <menuitem id="menu_bou" name="Hobbou"/>
+        <menuitem id="menu_bou_setting" name="Settings" parent="menu_bou" sequence="99"/>
+
+        <menuitem id="menu_bou_channel" name="Channels" parent="menu_bou" action="website_slides.action_slide_channels" sequence="3"/>
+        <menuitem id="menu_bou_slide" name="Slides" parent="menu_bou" action="website_slides.action_slides_slides" sequence="5"/>
+        <menuitem action="action_ir_res_users_bouslidebackendext" id="menu_action_ir_res_users" parent="menu_bou" sequence="55"/>
+        <menuitem action="action_ir_slide_category_bouslidebackendext" id="menu_bou_categories" parent="menu_bou_setting" sequence="5"/>
+        <menuitem action="website_slides.action_slide_tag" id="menu_bou_tag" parent="menu_bou_setting" sequence="7"/>
     </data>
 </odoo>

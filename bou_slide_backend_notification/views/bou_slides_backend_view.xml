@@ -86,7 +86,7 @@
             <field name="view_mode">tree,form</field>
         </record>
         
-        <menuitem action="action_ir_bou_user_notification_bouslidebackendnotification" id="menu_action_bou_user_notification_bouslidebackendnotification" parent="website_slides.menu_website_slides_root" sequence="99"/>
+        <menuitem action="action_ir_bou_user_notification_bouslidebackendnotification" id="menu_action_bou_user_notification_bouslidebackendnotification" parent="bou_slide_backend_ext.menu_bou" sequence="35"/>
     
     </data>
 </odoo>
