@@ -121,6 +121,7 @@ class Slide(models.Model):
 
 
     def _get_mime_type(self):
+        print "self.bou_filename :",self.bou_filename
         if self.bou_filename.lower().endswith('mp3'):
             self.mime_type = 'mpeg'
         elif self.bou_filename.lower().endswith('wav'):
@@ -167,19 +168,21 @@ class Slide(models.Model):
         allowed_audio = ('.wav', '.mp3', '.m4a')
         allowed_video = ('.mp4', '.mov', '.avi', '.wmv', '.flv')
 
-        #writing to temp file
+        # print "writing to temp file"
         file_ext = self.bou_filename[-4:].lower()
         if self.bou_filename.lower().endswith(('.jpeg','.webp','.tiff','.docx','.pptx')):
                 file_ext = self.bou_filename[-5:].lower()
 
         # print file_ext,"file is found"
-        with open(config['data_dir']+"temp"+file_ext, "wb") as fh:
-            fh.write(self.datas.decode('base64'))
 
+        # check_output('ffmpeg -y -loglevel quiet -i '+"\""+config['data_dir']+"\""+"temp_ori"+file_ext+' -vcodec libx264 -vf scale=-1:360 '+"\""+config['data_dir']+"\""+"temp"+file_ext, shell=True)
+        temp_file = "temp"+file_ext
+        with open(config['data_dir']+temp_file, "wb") as fh:
+            fh.write(self.datas.decode('base64'))
         if file_ext in allowed_audio:
             self.slide_type = 'audio'
 
-            tag = TinyTag.get(config['data_dir']+"temp"+file_ext)
+            tag = TinyTag.get(config['data_dir']+temp_file)
             # print "This track is by",tag.artist
             # print"It is",tag.duration,"seconds long"
             
@@ -192,15 +195,26 @@ class Slide(models.Model):
             self.slide_type = 'story'
         elif  file_ext in allowed_video:
             self.slide_type = 'video'
-
-            parser = createParser(config['data_dir']+"temp"+file_ext)
+            # print "video is found"
+            v_height = check_output('ffprobe -loglevel quiet -i '+"\""+config['data_dir']+"\""+temp_file+' -show_entries stream=height')
+            v_height_val = int(v_height[v_height.index('=')+1:v_height.index('[/')-2])
+            
+            # v_height_val = 720
+            # print "v_height_val :",v_height_val
+            if v_height_val > 360:
+                print "height_val more than 360"
+                check_output('ffmpeg -y -loglevel quiet -i '+"\""+config['data_dir']+"\""+temp_file+' -vf scale=-1:360 -c:v libx264 -crf 18 '+"\""+config['data_dir']+"\"temp_360"+file_ext)
+                temp_file = "temp_360"+file_ext
+                with open(config['data_dir']+temp_file, "rb") as vid:
+                    self.datas = base64.b64encode(vid.read())
+            parser = createParser(config['data_dir']+temp_file)
             metalist = metadata.extractMetadata(parser)
             duration = metalist.get('duration').total_seconds()
             if file_ext == '.wmv':
                 duration -= 3
             if not self.image:
 
-                check_output('ffmpeg -y -loglevel quiet -ss 00:00:01  -i '+"\""+config['data_dir']+"\""+"temp"+file_ext+' -vcodec mjpeg -vframes 1 -an -f rawvideo -s 320x240 '+"\""+config['data_dir']+"\""+"temp.jpg", shell=True)
+                check_output('ffmpeg -y -loglevel quiet -ss 00:00:01  -i '+"\""+config['data_dir']+"\""+temp_file+' -vcodec mjpeg -vframes 1 -an -f rawvideo -s 320x240 '+"\""+config['data_dir']+"\""+"temp.jpg", shell=True)
                 
                 with open(config['data_dir']+"temp.jpg", "rb") as image:
                     self.image = base64.b64encode(image.read())
