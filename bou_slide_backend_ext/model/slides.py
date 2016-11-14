@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
-import openerp
+import odoo
 import base64
-from openerp import api, fields, models
-from openerp.tools.safe_eval import safe_eval as eval
-from openerp.tools.translate import _
-from openerp.tools import config
-from openerp.exceptions import ValidationError
-from openerp.addons.bou_slide_backend_ext.tinytag import TinyTagException, TinyTag, ID3, Ogg, Wave, Flac
-from openerp.addons.bou_slide_backend_ext.hachoir_metadata import metadata
-from openerp.addons.bou_slide_backend_ext.hachoir_parser.guess import createParser
+from odoo import api, fields, models
+from odoo.tools.safe_eval import safe_eval as eval
+from odoo.tools.translate import _
+from odoo.tools import config
+from odoo.exceptions import ValidationError
+from odoo.addons.bou_slide_backend_ext.tinytag import TinyTagException, TinyTag, ID3, Ogg, Wave, Flac
+from odoo.addons.bou_slide_backend_ext.hachoir_metadata import metadata
+from odoo.addons.bou_slide_backend_ext.hachoir_parser.guess import createParser
 from datetime import timedelta
 from subprocess import check_output
 # from openerp.addons.bou_slide_backend_ext.ffmpy import *
