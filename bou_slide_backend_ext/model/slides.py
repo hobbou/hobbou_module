@@ -121,7 +121,7 @@ class Slide(models.Model):
 
 
     def _get_mime_type(self):
-        print "self.bou_filename :",self.bou_filename
+        # print "self.bou_filename :",self.bou_filename
         if self.bou_filename.lower().endswith('mp3'):
             self.mime_type = 'mpeg'
         elif self.bou_filename.lower().endswith('wav'):
@@ -202,7 +202,7 @@ class Slide(models.Model):
             # v_height_val = 720
             # print "v_height_val :",v_height_val
             if v_height_val > 360:
-                print "height_val more than 360"
+                # print "height_val more than 360"
                 check_output('ffmpeg -y -loglevel quiet -i '+"\""+config['data_dir']+"\""+temp_file+' -vf scale=-1:360 -c:v libx264 -crf 18 '+"\""+config['data_dir']+"\"temp_360"+file_ext)
                 temp_file = "temp_360"+file_ext
                 with open(config['data_dir']+temp_file, "rb") as vid:
