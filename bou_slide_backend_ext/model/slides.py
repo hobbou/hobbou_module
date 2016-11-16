@@ -196,14 +196,14 @@ class Slide(models.Model):
         elif  file_ext in allowed_video:
             self.slide_type = 'video'
             # print "video is found"
-            v_height = check_output('ffprobe -loglevel quiet -i '+"\""+config['data_dir']+"\""+temp_file+' -show_entries stream=height')
+            v_height = check_output('ffprobe -loglevel quiet -i '+"\""+config['data_dir']+"\""+temp_file+' -show_entries stream=height', shell=True)
             v_height_val = int(v_height[v_height.index('=')+1:v_height.index('[/')-2])
             
             # v_height_val = 720
             # print "v_height_val :",v_height_val
             if v_height_val > 360:
                 # print "height_val more than 360"
-                check_output('ffmpeg -y -loglevel quiet -i '+"\""+config['data_dir']+"\""+temp_file+' -vf scale=-1:360 -c:v libx264 -crf 18 '+"\""+config['data_dir']+"\"temp_360"+file_ext)
+                check_output('ffmpeg -y -loglevel quiet -i '+"\""+config['data_dir']+"\""+temp_file+' -vf scale=-1:360 -c:v libx264 -crf 18 '+"\""+config['data_dir']+"\"temp_360"+file_ext, shell=True)
                 temp_file = "temp_360"+file_ext
                 with open(config['data_dir']+temp_file, "rb") as vid:
                     self.datas = base64.b64encode(vid.read())
